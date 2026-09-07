@@ -7,7 +7,9 @@ import { businessPhotoUrl } from "@/lib/supabase";
 type Business = {
   id: string;
   name: string;
+  name_fa: string | null;
   tagline: string | null;
+  tagline_fa: string | null;
   category: string | null;
   city: string | null;
   country: string | null;
@@ -91,7 +93,7 @@ export function LocalGrid({
                 <input
                   type="text"
                   className="local-location-input"
-                  placeholder="Search a city..."
+                  placeholder={lang === "fa" ? "\u0634\u0647\u0631 \u0631\u0627 \u062C\u0633\u062A\u200C\u0648\u200C\u062C\u0648 \u06A9\u0646\u06CC\u062F..." : "Search a city..."}
                   value={cityInput}
                   onChange={(e) => { setCityInput(e.target.value); setShowCityDropdown(true); }}
                   onFocus={() => setShowCityDropdown(true)}
@@ -127,7 +129,7 @@ export function LocalGrid({
         <input
           type="text"
           className="local-search"
-          placeholder="Search by name, type, or keyword..."
+          placeholder={lang === "fa" ? "\u062C\u0633\u062A\u200C\u0648\u200C\u062C\u0648 \u0628\u0627 \u0646\u0627\u0645\u060C \u0646\u0648\u0639 \u06CC\u0627 \u06A9\u0644\u06CC\u062F\u0648\u0627\u0698\u0647..." : "Search by name, type, or keyword..."}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -162,7 +164,7 @@ export function LocalGrid({
       <div className="local-grid-wrap">
         {filtered.length === 0 ? (
           <div className="local-empty">
-            <p>No businesses found.</p>
+            <p>{lang === "fa" ? "\u06A9\u0633\u0628\u200C\u0648\u06A9\u0627\u0631\u06CC \u06CC\u0627\u0641\u062A \u0646\u0634\u062F." : "No businesses found."}</p>
             <button
               className="local-empty-reset"
               onClick={() => { setSearch(""); setSelectedCity(null); setSelectedCategory(null); setCityInput(""); }}
@@ -183,18 +185,18 @@ export function LocalGrid({
                     {photoUrl ? (
                       <img src={photoUrl} alt={biz.name} />
                     ) : (
-                      <span>Photo coming soon</span>
+                      <span>{lang === "fa" ? "\u0639\u06A9\u0633 \u0628\u0647 \u0632\u0648\u062F\u06CC" : "Photo coming soon"}</span>
                     )}
                   </div>
                   <div className="local-card-body">
-                    <h3>{biz.name}</h3>
+                    <h3>{lang === "fa" && biz.name_fa ? biz.name_fa : biz.name}</h3>
                     <p className="local-card-meta">
                       {biz.category ? biz.category.charAt(0).toUpperCase() + biz.category.slice(1) : ""}
                       {" " + dot + " "}
                       {biz.city}
                       {biz.country ? ", " + biz.country : ""}
                     </p>
-                    {biz.tagline && <p className="local-card-desc">{biz.tagline}</p>}
+                    {(biz.tagline || biz.tagline_fa) && <p className="local-card-desc">{lang === "fa" && biz.tagline_fa ? biz.tagline_fa : biz.tagline}</p>}
                   </div>
                 </Link>
               );
