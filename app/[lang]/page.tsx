@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { supabase, businessPhotoUrl } from "@/lib/supabase";
 import { t } from "@/lib/translations";
 import { ScrollRevealInit } from "@/components/scroll-reveal";
 import "./home.css";
+
+export const revalidate = 300;
 
 export default async function HomePage({
   params,
@@ -110,27 +113,31 @@ export default async function HomePage({
           </p>
 
           <div className="home-locals-preview">
-            <div className="home-locals-card scroll-reveal delay-1">
-              <div className="home-locals-card-img"><img src="/mockups/home-local.png" alt="Local businesses" style={{width:"100%",height:"100%",objectFit:"cover"}} /></div>
-              <div className="home-locals-card-body">
-                <h3>Eyval</h3>
-                <p>Restaurants · Brooklyn, United States</p>
-              </div>
-            </div>
-            <div className="home-locals-card scroll-reveal delay-2">
-              <div className="home-locals-card-img"><span>Photo</span></div>
-              <div className="home-locals-card-body">
-                <h3>Hafez</h3>
-                <p>Restaurants · London</p>
-              </div>
-            </div>
-            <div className="home-locals-card scroll-reveal delay-3">
-              <div className="home-locals-card-img"><span>Photo</span></div>
-              <div className="home-locals-card-body">
-                <h3>Ariana&#39;s Persian Kitchen</h3>
-                <p>Restaurants · Dubai</p>
-              </div>
-            </div>
+            {localCards.map((biz: any, i: number) => {
+              const photoKeys: string[] = Array.isArray(biz.photos) ? biz.photos : [];
+              const photoUrl = photoKeys.length > 0 ? businessPhotoUrl(photoKeys[0]) : null;
+              const dot = String.fromCharCode(183);
+              return (
+                <div key={biz.id} className={"home-locals-card scroll-reveal delay-" + (i + 1)}>
+                  <div className="home-locals-card-img">
+                    {photoUrl ? (
+                      <img src={photoUrl} alt={biz.name} style={{width:"100%",height:"100%",objectFit:"cover"}} />
+                    ) : (
+                      <span>{lang === "fa" ? "\u0639\u06A9\u0633 \u0628\u0647 \u0632\u0648\u062F\u06CC" : "Photo coming soon"}</span>
+                    )}
+                  </div>
+                  <div className="home-locals-card-body">
+                    <h3>{lang === "fa" && biz.name_fa ? biz.name_fa : biz.name}</h3>
+                    <p>
+                      {biz.category ? biz.category.charAt(0).toUpperCase() + biz.category.slice(1) : ""}
+                      {" " + dot + " "}
+                      {biz.city}
+                      {biz.country ? ", " + biz.country : ""}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div style={{ textAlign: "center" }}>
