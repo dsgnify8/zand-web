@@ -7,6 +7,7 @@ export default async function ExplorePage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const tx = lang === "fa" ? t.fa : t.en;
 
   if (lang === "fa") {
     return (

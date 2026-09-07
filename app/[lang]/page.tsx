@@ -13,6 +13,23 @@ export default async function HomePage({
 }) {
   const { lang } = await params;
 
+  const { data: featuredBiz } = await supabase
+    .from("businesses")
+    .select("id, name, name_fa, tagline, tagline_fa, category, city, country, photos")
+    .eq("status", "active")
+    .eq("featured", true)
+    .order("featured_rank")
+    .limit(3);
+
+  const localCards = featuredBiz && featuredBiz.length >= 3
+    ? featuredBiz
+    : (await supabase
+        .from("businesses")
+        .select("id, name, name_fa, tagline, tagline_fa, category, city, country, photos")
+        .eq("status", "active")
+        .limit(3)
+      ).data || [];
+
   if (lang === "fa") {
     return (
       <div style={{ paddingTop: "10rem", textAlign: "center", color: "#6B6B6B" }}>
