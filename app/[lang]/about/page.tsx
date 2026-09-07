@@ -37,22 +37,24 @@ export default async function AboutPage({
       <div className="bg-blush-to-white">
         <article className="about-article">
           <p className="lede">
-            Zand started with a gap. Not a market gap — a personal one. Growing up outside of Iran, with parents who talked about the country they&apos;d
-            left but always stopped short of the full story. There was a world behind your identity
-            that you could sense but <em>couldn&apos;t access</em>.
+            {isFa
+            ? <>زند با یک خلاء شروع شد. نه یک خلاء بازار — یک خلاء شخصی. بزرگ شدن در خارج از ایران، با پدر و مادری که از کشوری که ترکش کرده بودند حرف می‌زدند اما همیشه جایی داستان متوقف می‌شد. دنیایی پشت هویتت بود که حسش می‌کردی اما <em>دسترسی نداشتی</em>.</>
+            : <>Zand started with a gap. Not a market gap — a personal one. Growing up outside of Iran, with parents who talked about the country they&apos;d left but always stopped short of the full story. There was a world behind your identity that you could sense but <em>couldn&apos;t access</em>.</>
+            }
           </p>
           <p>
-            A close friend who knew Iranian history well became an accidental teacher. A simple
-            question would turn into hours of conversation — a historical event, a cultural shift,
-            a person she&apos;d never heard of. She&apos;d leave each one realising{" "}
-            <strong>how much she&apos;d never been taught</strong> about her own country. And she
-            started to wonder how many other Iranians felt the same way.
+            {isFa
+            ? <>یک دوست نزدیک که تاریخ ایران را خوب می‌شناخت معلمی اتفاقی شد. یک سؤال ساده به ساعت‌ها گفت‌و‌گو تبدیل می‌شد — یک رویداد تاریخی، یک تحول فرهنگی، شخصیتی که هرگز اسمش را نشنیده بود. هر بار با این فکر بیرون می‌آمد که <strong>چقدر چیزهایی بود که هرگز یادش نداده بودند</strong>. و شروع کرد به فکر کردن که چند ایرانی دیگر همین حس را دارند.</>
+            : <>A close friend who knew Iranian history well became an accidental teacher. A simple question would turn into hours of conversation — a historical event, a cultural shift, a person she&apos;d never heard of. She&apos;d leave each one realising{" "}<strong>how much she&apos;d never been taught</strong> about her own country. And she started to wonder how many other Iranians felt the same way.</>
+            }
           </p>
 
           <blockquote className="about-pullquote">
             <p>
-              &ldquo;Before you can understand what is happening to a country, you have to
-              understand its story.&rdquo;
+              {isFa
+              ? "«قبل از اینکه بفهمی چه بر سر یک کشور می‌آید، باید داستانش را بشناسی.»"
+              : "\u201CBefore you can understand what is happening to a country, you have to understand its story.\u201D"
+              }
             </p>
           </blockquote>
         </article>
@@ -88,16 +90,16 @@ export default async function AboutPage({
         <article className="about-article">
           <h2 className="about-section-heading">{isFa ? "زند چیست" : "What Zand is"}</h2>
           <p>
-            Zand is a place where being Iranian can mean whatever it means to you. You can learn
-            Persian in a way that <em>actually works</em> — not a translation of a Western language
-            app, but something built for how Farsi is actually spoken and read. You can explore
-            Iranian history through original sources, not summaries. You can discover the culture
-            beyond what makes the news.
+            {isFa
+            ? <>زند جاییست که ایرانی بودن می‌تواند هر معنایی برایت داشته باشد. فارسی را به روشی یاد بگیری که <em>واقعاً جواب می‌دهد</em> — تاریخ ایران را از منابع اصلی بخوانی، نه خلاصه. فرهنگی را کشف کنی که فراتر از اخبار است.</>
+            : <>Zand is a place where being Iranian can mean whatever it means to you. You can learn Persian in a way that <em>actually works</em> — not a translation of a Western language app, but something built for how Farsi is actually spoken and read. You can explore Iranian history through original sources, not summaries. You can discover the culture beyond what makes the news.</>
+            }
           </p>
           <p>
-            It&apos;s not a political project. It doesn&apos;t tell anyone what to think about
-            Iran. It gives people the tools to <strong>think, question, and learn</strong> — and
-            to form their own relationship with it.
+            {isFa
+            ? <>یک پروژهٔ سیاسی نیست. به کسی نمی‌گوید دربارهٔ ایران چه فکر کند. ابزاری می‌دهد برای <strong>فکر کردن، پرسیدن و یاد گرفتن</strong> — و ساختن رابطهٔ خودت با آن.</>
+            : <>It&apos;s not a political project. It doesn&apos;t tell anyone what to think about Iran. It gives people the tools to <strong>think, question, and learn</strong> — and to form their own relationship with it.</>
+            }
           </p>
         </article>
       </div>
@@ -107,13 +109,10 @@ export default async function AboutPage({
         <article className="about-article">
           <h2 className="about-section-heading">{isFa ? "صدای درست" : "The right voice"}</h2>
           <p>
-            There was one piece the founder knew she couldn&apos;t build alone. If Zand was going
-            to represent Iran, the people already living it had to be part of it. That&apos;s why
-            the partnership with <strong>The Persian Mag</strong> matters. TPM has a following of
-            over 150,000 and an editorial voice rooted in{" "}
-            <em>the Iran that exists right now</em> — its artists, creators, and emerging talent.
-            Their world became part of Zand&apos;s, so the platform doesn&apos;t just talk about
-            Iran. It shows you what Iran is making today.
+            {isFa
+            ? <>یک بخش بود که بنیان‌گذار می‌دانست تنهایی نمی‌تواند بسازد. اگر زند قرار بود ایران را نمایندگی کند، کسانی که الآن در آن زندگی می‌کنند باید بخشی از آن باشند. به همین دلیل همکاری با <strong>در پرشین مگ</strong> اهمیت دارد. TPM با بیش از ۱۵۰ هزار دنبال‌کننده و صدایی ریشه‌دار در <em>ایران امروز</em> — هنرمندان، خالقان و استعدادهای نوظهور. دنیایشان بخشی از زند شد، تا پلتفرم فقط از ایران حرف نزند — نشان دهد ایران امروز چه می‌سازد.</>
+            : <>There was one piece the founder knew she couldn&apos;t build alone. If Zand was going to represent Iran, the people already living it had to be part of it. That&apos;s why the partnership with <strong>The Persian Mag</strong> matters. TPM has a following of over 150,000 and an editorial voice rooted in{" "}<em>the Iran that exists right now</em> — its artists, creators, and emerging talent. Their world became part of Zand&apos;s, so the platform doesn&apos;t just talk about Iran. It shows you what Iran is making today.</>
+            }
           </p>
           <div className="about-placeholder" style={{overflow:"hidden"}}>
             <img src="/mockups/tpm-voice.jpg" alt="ZAND x The Persian Mag" style={{width:"100%",height:"100%",objectFit:"cover"}} />
@@ -139,10 +138,10 @@ export default async function AboutPage({
             gives the community a way to <strong>find and support them</strong>.
           </p>
           <p>
-            Together, these pieces are what make Zand feel complete. A place where you can learn
-            something in five minutes or disappear into a subject for five hours. Where you can
-            hear your language, find a Persian restaurant in a city you&apos;ve never visited, or
-            feel a little more connected to something that has <em>always been part of you</em>.
+            {isFa
+            ? <>این بخش‌ها با هم زند را کامل می‌کنند. جایی که در پنج دقیقه چیزی یاد بگیری یا پنج ساعت در موضوعی غرق شوی. زبانت را بشنوی، در شهری که هرگز نرفته‌ای یک رستوران ایرانی پیدا کنی، یا کمی بیشتر به چیزی وصل شوی که <em>همیشه بخشی از تو بوده</em>.</>
+            : <>Together, these pieces are what make Zand feel complete. A place where you can learn something in five minutes or disappear into a subject for five hours. Where you can hear your language, find a Persian restaurant in a city you&apos;ve never visited, or feel a little more connected to something that has <em>always been part of you</em>.</>
+            }
           </p>
         </article>
       </div>
@@ -152,9 +151,10 @@ export default async function AboutPage({
         <div className="tile-pattern" />
         <div className="about-closing-inner">
           <blockquote>
-            &ldquo;I know what it&apos;s like to feel curious about a part of yourself and not
-            quite know where to begin. So I wanted to build the place I wish I had growing
-            up.&rdquo;
+            {isFa
+            ? "«می‌دانم چه حسیست که به بخشی از خودت کنجکاو باشی و ندانی از کجا شروع کنی. برای همین خواستم جایی را بسازم که آرزو داشتم وقتی بزرگ می‌شدم داشتم.»"
+            : "\u201CI know what it\u2019s like to feel curious about a part of yourself and not quite know where to begin. So I wanted to build the place I wish I had growing up.\u201D"
+            }
           </blockquote>
           <p className="about-attr">Nojan Zandesh, Founder</p>
         </div>
