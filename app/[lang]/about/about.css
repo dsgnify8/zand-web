@@ -1,0 +1,360 @@
+/* ── About page styles ── */
+
+.about-hero-wrap {
+  background: linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-wrap::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139,29,46,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 11rem 3rem 5rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.about-hero-label {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: #8B1D2E;
+  margin-bottom: 2rem;
+}
+
+.about-hero h1 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  color: #171717;
+  margin: 0 auto 1.5rem;
+  max-width: 700px;
+}
+
+.about-hero-sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #6B6B6B;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.about-rule {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-rule-line {
+  height: 1px;
+  width: 120px;
+  background: linear-gradient(to right, #B8924A, #D4AD5E, transparent 80%);
+}
+
+.about-article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 3rem 4.5rem;
+}
+
+.about-article p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #3D3D3D;
+  margin-bottom: 1.6rem;
+  max-width: 720px;
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-article p.lede {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: #171717;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  max-width: 680px;
+}
+
+.about-article em {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-style: italic;
+  font-size: 1.12em;
+  font-weight: 400;
+  color: #171717;
+}
+
+.about-article strong {
+  font-weight: 500;
+  color: #171717;
+}
+
+.about-section-heading {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: #171717;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.about-pullquote {
+  margin: 3rem auto;
+  padding: 0 0 0 2rem;
+  border-left: 2px solid #8B1D2E;
+  max-width: 560px;
+}
+
+.about-pullquote p {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 1.55rem !important;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5 !important;
+  color: #8B1D2E !important;
+  margin-bottom: 0 !important;
+  max-width: 100% !important;
+}
+
+.about-wine {
+  background: linear-gradient(135deg, #5C1528 0%, #3D0E1A 60%, #2E0A12 100%);
+  padding: 6rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-wine .tile-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='30' r='5' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.about-wine::before,
+.about-wine::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 10%, #B8924A, transparent 90%);
+  opacity: 0.3;
+}
+
+.about-wine::before { top: 0; }
+.about-wine::after { bottom: 0; }
+
+.about-wine-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-wine h2 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: #F8F6F2;
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+
+.about-wine p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(248, 246, 242, 0.7);
+  margin-bottom: 1.6rem;
+  font-weight: 300;
+}
+
+.about-wine em {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-style: italic;
+  font-size: 1.12em;
+  color: #F8F6F2;
+}
+
+.about-wine strong {
+  color: #F8F6F2;
+  font-weight: 400;
+}
+
+.about-wine-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.about-wine-mark span {
+  font-size: 8rem;
+  color: rgba(184, 146, 74, 0.12);
+  user-select: none;
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.bg-blush-to-white {
+  background: linear-gradient(180deg, #FDF5F3 0%, #FDFDFC 100%);
+}
+
+.bg-white-to-rose {
+  background: linear-gradient(180deg, #FDFDFC 0%, #F9F0F0 100%);
+}
+
+.bg-tpm {
+  background: linear-gradient(180deg, #F9F0F0 0%, rgba(184, 146, 74, 0.06) 50%, #FDFDFC 100%);
+  position: relative;
+}
+
+.bg-tpm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(184, 146, 74, 0.2), transparent);
+}
+
+.bg-locals {
+  background: linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 100%);
+}
+
+.about-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, rgba(184, 146, 74, 0.06), rgba(139, 29, 46, 0.04));
+  border-radius: 3px;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(184, 146, 74, 0.12);
+  max-width: 720px;
+}
+
+.about-placeholder span {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: 0.04em;
+}
+
+.about-locals-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, rgba(139, 29, 46, 0.06), rgba(184, 146, 74, 0.08));
+  border: 1px solid rgba(139, 29, 46, 0.06);
+  border-radius: 3px;
+  padding: 0.75rem 1.25rem;
+  margin: 0 auto 1.5rem;
+  width: fit-content;
+}
+
+.about-locals-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8B1D2E;
+  flex-shrink: 0;
+}
+
+.about-locals-banner span {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: 0.03em;
+}
+
+.about-closing {
+  background: linear-gradient(180deg, #5C1528 0%, #3D0E1A 50%, #171717 100%);
+  text-align: center;
+  padding: 7rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-closing .tile-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='30' r='5' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.about-closing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 10%, #B8924A, transparent 90%);
+  opacity: 0.35;
+}
+
+.about-closing-inner {
+  max-width: 580px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-closing blockquote {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  color: #F8F6F2;
+  margin-bottom: 2.5rem;
+}
+
+.about-closing .about-attr {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #B8924A;
+}
+
+@media (max-width: 768px) {
+  .about-hero { padding: 7.5rem 1.5rem 3.5rem; }
+  .about-hero h1 { font-size: 2.4rem; }
+  .about-article { padding: 3rem 1.5rem; }
+  .about-section-heading { font-size: 2.2rem; }
+  .about-pullquote p { font-size: 1.3rem !important; }
+  .about-wine { padding: 3.5rem 1.5rem; }
+  .about-wine-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .about-wine-mark { display: none; }
+  .about-wine h2 { font-size: 2.2rem; }
+  .about-closing { padding: 4.5rem 1.5rem; }
+}

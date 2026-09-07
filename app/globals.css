@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Fonts — reference Next.js font variables */
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Colors */
+  --color-zand-bg: #FDFDFC;
+  --color-zand-ink: #171717;
+  --color-zand-ink-mid: #3D3D3D;
+  --color-zand-ink-light: #6B6B6B;
+  --color-zand-pomegranate: #8B1D2E;
+  --color-zand-wine: #5C1528;
+  --color-zand-wine-deep: #3D0E1A;
+  --color-zand-gold: #B8924A;
+  --color-zand-gold-light: #D4AD5E;
+  --color-zand-rose-mist: #F9F0F0;
+  --color-zand-warm-white: #F8F6F2;
+  --color-zand-cream-blush: #FDF5F3;
+
+  /* Font sizes */
+  --font-size-heading-xl: clamp(2.6rem, 5.5vw, 3.8rem);
+  --font-size-heading-xl--line-height: 1.15;
+  --font-size-heading-lg: 2.6rem;
+  --font-size-heading-lg--line-height: 1.15;
+  --font-size-heading-md: 1.75rem;
+  --font-size-heading-md--line-height: 1.25;
+  --font-size-body-lg: 1.1rem;
+  --font-size-body-lg--line-height: 1.8;
+  --font-size-body: 1rem;
+  --font-size-body--line-height: 1.85;
+  --font-size-small: 0.82rem;
+  --font-size-small--line-height: 1.6;
+  --font-size-xs: 0.72rem;
+  --font-size-xs--line-height: 1.5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Base */
+body {
+  background: var(--color-zand-bg);
+  color: var(--color-zand-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* RTL: zero letter-spacing for Arabic script */
+[dir="rtl"] * {
+  letter-spacing: 0 !important;
+}
+
+/* Persian geometric tile pattern */
+.tile-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='30' r='5' fill='none' stroke='%23B8924A' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Gradient utilities */
+.gradient-hero {
+  background: linear-gradient(180deg, var(--color-zand-bg) 0%, var(--color-zand-cream-blush) 100%);
+}
+
+.gradient-blush-to-white {
+  background: linear-gradient(180deg, var(--color-zand-cream-blush) 0%, var(--color-zand-bg) 100%);
+}
+
+.gradient-white-to-rose {
+  background: linear-gradient(180deg, var(--color-zand-bg) 0%, var(--color-zand-rose-mist) 100%);
+}
+
+.gradient-tpm {
+  background: linear-gradient(180deg, var(--color-zand-rose-mist) 0%, rgba(184, 146, 74, 0.06) 50%, var(--color-zand-bg) 100%);
+}
+
+.gradient-locals {
+  background: linear-gradient(180deg, var(--color-zand-bg) 0%, var(--color-zand-cream-blush) 100%);
+}
+
+.gradient-wine {
+  background: linear-gradient(135deg, var(--color-zand-wine) 0%, var(--color-zand-wine-deep) 60%, #2E0A12 100%);
+}
+
+.gradient-closing {
+  background: linear-gradient(180deg, var(--color-zand-wine) 0%, var(--color-zand-wine-deep) 50%, var(--color-zand-ink) 100%);
+}
+
+/* Gold rules */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(to right, var(--color-zand-gold), var(--color-zand-gold-light), transparent 70%);
+}
+
+.gold-rule-center {
+  height: 1px;
+  background: linear-gradient(to right, transparent 10%, var(--color-zand-gold), transparent 90%);
+  opacity: 0.3;
+}
+
+/* Editorial emphasis */
+.editorial em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.12em;
+  font-weight: 400;
+  color: var(--color-zand-ink);
+}
+
+.editorial strong {
+  font-weight: 500;
+  color: var(--color-zand-ink);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Phone mockup frame ── */
+.phone-frame {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 8px solid #1a1a1a;
+  box-shadow: 0 20px 60px rgba(23,23,23,0.15), 0 0 0 1px rgba(23,23,23,0.08);
+  background: #1a1a1a;
+  aspect-ratio: 9 / 19.5;
+}
+
+.phone-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.phone-frame-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 28px;
+  background: #1a1a1a;
+  border-radius: 0 0 18px 18px;
+  z-index: 2;
+}
+
+.phone-frame-sm {
+  max-width: 220px;
+}
+
+.phone-frame-lg {
+  max-width: 320px;
 }
