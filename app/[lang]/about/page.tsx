@@ -13,14 +13,9 @@ export default async function AboutPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const isFa = lang === "fa";
 
-  if (lang === "fa") {
-    return (
-      <div style={{ paddingTop: "10rem", textAlign: "center", color: "#6B6B6B" }}>
-        نسخه فارسی به زودی
-      </div>
-    );
-  }
+  // Farsi now renders the full page
 
   return (
     <>
