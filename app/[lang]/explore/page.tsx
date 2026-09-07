@@ -1,4 +1,5 @@
 import "./explore.css";
+import { t } from "@/lib/translations";
 
 export default async function ExplorePage({
   params,
@@ -20,8 +21,8 @@ export default async function ExplorePage({
       {/* Hero */}
       <section className="explore-hero">
         <div className="tile-pattern" />
-        <p className="explore-hero-label">Explore Iran</p>
-        <h1>Discover the world behind the headlines</h1>
+        <p className="explore-hero-label">{tx.homeExploreLabel}</p>
+        <h1>{tx.exploreHeroTitle}</h1>
         <p className="explore-hero-sub">
           History, culture, identity — written from original sources,
           designed to inform, never to tell you what to think.
@@ -41,7 +42,7 @@ export default async function ExplorePage({
         <div className="explore-section-inner">
           <p className="explore-section-label">History</p>
           <p className="explore-section-persian">تاریخ</p>
-          <h2 className="explore-section-title">Three thousand years in four chapters</h2>
+          <h2 className="explore-section-title">{tx.exploreHistoryTitle}</h2>
           <p className="explore-section-desc">
             From the first Persian empire to the Iran of today — a continuous story
             told through <em>original sources</em>, not textbook summaries.
@@ -75,7 +76,7 @@ export default async function ExplorePage({
               </div>
 
               <div className="history-more">
-                <p>And <strong>14 more sections</strong> to discover inside the app.</p>
+                <p>{tx.moreSections}</p>
               </div>
             </div>
 
@@ -92,7 +93,7 @@ export default async function ExplorePage({
         <div className="explore-section-inner">
           <p className="explore-section-label">Literature</p>
           <p className="explore-section-persian">ادبیات</p>
-          <h2 className="explore-section-title">Seven poets, a thousand years, one language</h2>
+          <h2 className="explore-section-title">{tx.exploreLitTitle}</h2>
           <p className="explore-section-desc">
             The poets who defined Persian — and whose words are still quoted at dinner tables,
             weddings, and farewells across the Iranian world.
@@ -120,7 +121,7 @@ export default async function ExplorePage({
           </div>
 
           <div className="lit-more">
-            <p>And <strong>4 more poets</strong> to discover inside the app.</p>
+            <p>{tx.morePoets}</p>
           </div>
         </div>
       </section>
@@ -131,7 +132,7 @@ export default async function ExplorePage({
         <div className="explore-section-inner" style={{ position: "relative", zIndex: 1 }}>
           <p className="explore-section-label">Culture</p>
           <p className="explore-section-persian">فرهنگ</p>
-          <h2 className="explore-section-title">The Unwritten Rules</h2>
+          <h2 className="explore-section-title">{tx.exploreCultureTitle}</h2>
           <p className="explore-section-desc">
             Nobody sits you down and explains any of this. You are supposed to absorb it, and
             if you did not grow up inside it, you spend your life half a beat behind.
@@ -166,7 +167,7 @@ export default async function ExplorePage({
         <div className="explore-section-inner">
           <p className="explore-section-label">Geography</p>
           <p className="explore-section-persian">جغرافیا</p>
-          <h2 className="explore-section-title">A country most people cannot picture</h2>
+          <h2 className="explore-section-title">{tx.exploreGeoTitle}</h2>
           <p className="explore-section-desc">
             Mountains, deserts, forests, coastlines — Iran is not one landscape. Explore
             its provinces, cities, and the geography that shaped its history.
@@ -181,7 +182,7 @@ export default async function ExplorePage({
       {/* ── SHARE BAND ── */}
       <section className="explore-share">
         <div className="explore-share-inner">
-          <h2>Learn it. Save it. Share it.</h2>
+          <h2>{tx.exploreShareTitle}</h2>
           <p>
             Everything you discover in Zand can be saved to your collection, shared with
             friends, or sent directly inside the app — and when they open it,
@@ -191,23 +192,23 @@ export default async function ExplorePage({
           <div className="share-features">
             <div className="share-feature">
               <div className="share-feature-icon">&#x2764;</div>
-              <h3>Like</h3>
-              <p>Mark what resonates with you</p>
+              <h3>{tx.like}</h3>
+              <p>{tx.likeDesc}</p>
             </div>
             <div className="share-feature">
               <div className="share-feature-icon">&#x1F516;</div>
-              <h3>Save</h3>
-              <p>Build your own collection</p>
+              <h3>{tx.save}</h3>
+              <p>{tx.saveDesc}</p>
             </div>
             <div className="share-feature">
               <div className="share-feature-icon">&#x1F4E4;</div>
-              <h3>Share</h3>
-              <p>Send to anyone, anywhere</p>
+              <h3>{tx.share}</h3>
+              <p>{tx.shareDesc}</p>
             </div>
             <div className="share-feature">
               <div className="share-feature-icon">&#x1F4AC;</div>
-              <h3>Send</h3>
-              <p>Your friends learn it too</p>
+              <h3>{tx.send}</h3>
+              <p>{tx.sendDesc}</p>
             </div>
           </div>
         </div>
@@ -215,9 +216,9 @@ export default async function ExplorePage({
 
       {/* CTA */}
       <section className="explore-cta">
-        <h2>Start exploring</h2>
+        <h2>{tx.exploreCtaTitle}</h2>
         <p>Download Zand and dive into the story of Iran.</p>
-        <a href="#" className="explore-cta-btn">Download the App</a>
+        <a href="#" className="explore-cta-btn">{tx.downloadApp}</a>
       </section>
     </>
   );

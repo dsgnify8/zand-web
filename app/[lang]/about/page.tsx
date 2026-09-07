@@ -27,8 +27,8 @@ export default async function AboutPage({
       {/* Hero */}
       <div className="about-hero-wrap">
         <header className="about-hero">
-          <p className="about-hero-label">The story behind Zand</p>
-          <h1>A place to come home to</h1>
+          <p className="about-hero-label">{isFa ? "داستان پشت زند" : "The story behind Zand"}</p>
+          <h1>{isFa ? "جایی برای بازگشت به خانه" : "A place to come home to"}</h1>
           <p className="about-hero-sub">
             How a question about identity became a platform for an entire diaspora.
           </p>
@@ -68,7 +68,7 @@ export default async function AboutPage({
         <div className="tile-pattern" />
         <div className="about-wine-inner">
           <div>
-            <h2>The turning point</h2>
+            <h2>{isFa ? "نقطهٔ عطف" : "The turning point"}</h2>
             <p>
               In late 2025 and early 2026, as protests and conflict brought Iran back into global
               headlines, she watched something happen among Iranians around the world. A collective
@@ -91,7 +91,7 @@ export default async function AboutPage({
       {/* What Zand is */}
       <div className="bg-white-to-rose">
         <article className="about-article">
-          <h2 className="about-section-heading">What Zand is</h2>
+          <h2 className="about-section-heading">{isFa ? "زند چیست" : "What Zand is"}</h2>
           <p>
             Zand is a place where being Iranian can mean whatever it means to you. You can learn
             Persian in a way that <em>actually works</em> — not a translation of a Western language
@@ -110,7 +110,7 @@ export default async function AboutPage({
       {/* TPM */}
       <div className="bg-tpm">
         <article className="about-article">
-          <h2 className="about-section-heading">The right voice</h2>
+          <h2 className="about-section-heading">{isFa ? "صدای درست" : "The right voice"}</h2>
           <p>
             There was one piece the founder knew she couldn&apos;t build alone. If Zand was going
             to represent Iran, the people already living it had to be part of it. That&apos;s why
@@ -129,7 +129,7 @@ export default async function AboutPage({
       {/* Locals */}
       <div className="bg-locals">
         <article className="about-article">
-          <h2 className="about-section-heading">Locals</h2>
+          <h2 className="about-section-heading">{isFa ? "محلی" : "Locals"}</h2>
 
           <div className="about-locals-banner">
             <div className="about-locals-dot" />

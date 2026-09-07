@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { t } from "@/lib/translations";
 import { ScrollRevealInit } from "@/components/scroll-reveal";
 import "./home.css";
 
@@ -24,10 +25,9 @@ export default async function HomePage({
       <section className="home-hero">
         <p className="home-hero-persian">زند</p>
         <h1 className="home-hero-logo">ZAND</h1>
-        <p className="home-hero-tagline">Rooted Living</p>
+        <p className="home-hero-tagline">{lang === "fa" ? t.fa.homeTagline : "Rooted Living"}</p>
         <p className="home-hero-desc">
-          Learn Persian. Explore Iranian history and culture.
-          Discover Iranian-owned businesses <em>anywhere in the world</em>.
+          {lang === "fa" ? t.fa.homeDesc : "Learn Persian. Explore Iranian history and culture. Discover Iranian-owned businesses"}{" "}<em>{lang === "fa" ? t.fa.homeDescEm : "anywhere in the world"}</em>{lang === "fa" ? t.fa.homeDescEnd || "" : "."}
         </p>
         <div className="home-cta-group">
           <a href="#" className="home-cta-primary">
@@ -37,15 +37,15 @@ export default async function HomePage({
             Our Story
           </Link>
         </div>
-        <p className="home-scroll-hint">Scroll to explore ↓</p>
+        <p className="home-scroll-hint">{lang === "fa" ? t.fa.scrollToExplore : "Scroll to explore ↓"}</p>
       </section>
 
       {/* Language */}
       <section className="home-section" style={{ background: "linear-gradient(180deg, #F9F0F0 0%, #FDFDFC 50%, #FDF5F3 100%)" }}>
         <div className="home-section-inner">
-          <p className="home-section-label">Learn Persian</p>
+          <p className="home-section-label">{lang === "fa" ? t.fa.homeLearnLabel : "Learn Persian"}</p>
           <h2 className="home-section-title scroll-reveal">
-            There has never been a proper way to learn Farsi online
+            {lang === "fa" ? t.fa.homeLearnTitle : "There has never been a proper way to learn Farsi online"}
           </h2>
           <p className="home-section-desc">
             Not a translation of a Western language app. Zand teaches Persian the way it is
@@ -55,16 +55,16 @@ export default async function HomePage({
 
           <div className="home-features">
             <div className="home-feature-card feature-bg-1 scroll-reveal delay-1">
-              <h3>Journey</h3>
-              <p>A guided path from your first letter to full conversation, built for how Farsi actually works.</p>
+              <h3>{lang === "fa" ? t.fa.homeJourney : "Journey"}</h3>
+              <p>{lang === "fa" ? t.fa.homeJourneyDesc : "A guided path from your first letter to full conversation, built for how Farsi actually works."}</p>
             </div>
             <div className="home-feature-card feature-bg-2 scroll-reveal delay-2">
-              <h3>Flip Cards</h3>
-              <p>Learn vocabulary through repetition, with pronunciation and transliteration on every card.</p>
+              <h3>{lang === "fa" ? t.fa.homeFlipCards : "Flip Cards"}</h3>
+              <p>{lang === "fa" ? t.fa.homeFlipCardsDesc : "Learn vocabulary through repetition, with pronunciation and transliteration on every card."}</p>
             </div>
             <div className="home-feature-card feature-bg-3 scroll-reveal delay-3">
-              <h3>AI Translation</h3>
-              <p>Speak in English or Farsi and hear the translation spoken back. A conversation partner in your pocket.</p>
+              <h3>{lang === "fa" ? t.fa.homeAiTranslation : "AI Translation"}</h3>
+              <p>{lang === "fa" ? t.fa.homeAiTranslationDesc : "Speak in English or Farsi and hear the translation spoken back. A conversation partner in your pocket."}</p>
             </div>
           </div>
 
@@ -80,9 +80,9 @@ export default async function HomePage({
       <section className="home-wine-band">
         <div className="tile-pattern" />
         <div className="home-section-inner" style={{ position: "relative", zIndex: 1 }}>
-          <p className="home-section-label">Explore Iran</p>
+          <p className="home-section-label">{lang === "fa" ? t.fa.homeExploreLabel : "Explore Iran"}</p>
           <h2 className="home-section-title scroll-reveal">
-            Discover the world behind the headlines
+            {lang === "fa" ? t.fa.homeExploreTitle : "Discover the world behind the headlines"}
           </h2>
           <p className="home-section-desc">
             Original articles on Iranian history, culture, and identity — from ancient Persia
@@ -100,9 +100,9 @@ export default async function HomePage({
       {/* Locals */}
       <section className="home-section" style={{ background: "linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 100%)" }}>
         <div className="home-section-inner">
-          <p className="home-section-label">Local</p>
+          <p className="home-section-label">{lang === "fa" ? t.fa.homeLocalLabel : "Local"}</p>
           <h2 className="home-section-title scroll-reveal">
-            Find Iranian-owned businesses worldwide
+            {lang === "fa" ? t.fa.homeLocalTitle : "Find Iranian-owned businesses worldwide"}
           </h2>
           <p className="home-section-desc">
             Restaurants, shops, and services run by Iranians — from Brooklyn to Dubai to London.
@@ -178,7 +178,7 @@ export default async function HomePage({
 
       {/* Final CTA */}
       <section className="home-final-cta">
-        <h2>A place where your identity feels like home</h2>
+        <h2>{lang === "fa" ? t.fa.homeCtaTitle : "A place where your identity feels like home"}</h2>
         <p>
           Whether you are reconnecting with your roots, learning the language,
           growing your business, or simply curious — Zand is where it starts.

@@ -1,4 +1,5 @@
 import "./language.css";
+import { t } from "@/lib/translations";
 
 export default async function LanguagePage({
   params,
@@ -7,25 +8,19 @@ export default async function LanguagePage({
 }) {
   const { lang } = await params;
 
-  if (lang === "fa") {
-    return (
-      <div style={{ paddingTop: "10rem", textAlign: "center", color: "#6B6B6B" }}>
-        \u0646\u0633\u062E\u0647 \u0641\u0627\u0631\u0633\u06CC \u0628\u0647 \u0632\u0648\u062F\u06CC
-      </div>
-    );
-  }
+  const tx = lang === "fa" ? t.fa : t.en;
 
   return (
     <>
       {/* Hero */}
       <section className="lang-hero">
-        <p className="lang-hero-label">Learn Persian</p>
-        <h1>The first real way to learn Farsi online</h1>
+        <p className="lang-hero-label">{tx.homeLearnLabel}</p>
+        <h1>{tx.langHeroTitle}</h1>
         <p className="lang-hero-sub">
           Not a translation of Duolingo. Zand teaches Persian the way it is actually
           spoken and read \u2014 built from the ground up for the language, not adapted from another one.
         </p>
-        <a href="#" className="lang-hero-cta">Start learning in the app</a>
+        <a href="#" className="lang-hero-cta">{tx.langHeroCta}</a>
       </section>
 
       {/* Journey */}
@@ -33,8 +28,8 @@ export default async function LanguagePage({
         <div className="lang-section-inner">
           <div className="lang-section-split">
             <div className="lang-section-text">
-              <p className="lang-section-label">The Journey</p>
-              <h2 className="lang-section-title">From your first letter to full conversation</h2>
+              <p className="lang-section-label">{tx.langJourneyLabel}</p>
+              <h2 className="lang-section-title">{tx.langJourneyTitle}</h2>
               <p className="lang-section-desc">
                 A structured path that takes you through the Persian alphabet, basic vocabulary,
                 sentence structure, and real conversation \u2014 <em>step by step</em>, at your own pace.
@@ -56,8 +51,8 @@ export default async function LanguagePage({
         <div className="lang-section-inner">
           <div className="lang-section-split reverse">
             <div className="lang-section-text">
-              <p className="lang-section-label">Flip Cards</p>
-              <h2 className="lang-section-title">Learn by seeing, hearing, and repeating</h2>
+              <p className="lang-section-label">{tx.langFlipLabel}</p>
+              <h2 className="lang-section-title">{tx.langFlipTitle}</h2>
               <p className="lang-section-desc">
                 Every card shows the Persian word, its transliteration, and the English meaning.
                 Flip to reveal. <strong>Pronunciation is built in</strong> \u2014 you hear how each
@@ -85,8 +80,8 @@ export default async function LanguagePage({
         <div className="lang-section-inner">
           <div className="lang-section-split">
             <div className="lang-section-text">
-              <p className="lang-section-label">Quizzes</p>
-              <h2 className="lang-section-title">Test what you have learned</h2>
+              <p className="lang-section-label">{tx.langQuizLabel}</p>
+              <h2 className="lang-section-title">{tx.langQuizTitle}</h2>
               <p className="lang-section-desc">
                 After each section, short quizzes check your understanding \u2014 reading, vocabulary,
                 and comprehension. <em>You move forward when you are ready</em>, not when
@@ -109,8 +104,8 @@ export default async function LanguagePage({
         <div className="lang-section-inner" style={{ position: "relative", zIndex: 1 }}>
           <div className="lang-section-split">
             <div className="lang-section-text">
-              <p className="lang-section-label">AI Translation</p>
-              <h2 className="lang-section-title">Speak and hear it translated live</h2>
+              <p className="lang-section-label">{tx.langAiLabel}</p>
+              <h2 className="lang-section-title">{tx.langAiTitle}</h2>
               <p className="lang-section-desc">
                 Say something in English and hear it in Farsi. Say it in Farsi and get
                 the English back. A live conversation partner that helps you practise
@@ -129,9 +124,9 @@ export default async function LanguagePage({
 
       {/* CTA */}
       <section className="lang-cta-band">
-        <h2>Ready to start?</h2>
+        <h2>{tx.langCtaTitle}</h2>
         <p>Download Zand and begin your first lesson today.</p>
-        <a href="#" className="lang-hero-cta">Download the App</a>
+        <a href="#" className="lang-hero-cta">{tx.downloadApp}</a>
       </section>
     </>
   );
