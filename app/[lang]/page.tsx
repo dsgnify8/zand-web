@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ScrollRevealInit } from "@/components/scroll-reveal";
 import "./home.css";
 
 export default async function HomePage({
@@ -18,6 +19,7 @@ export default async function HomePage({
 
   return (
     <>
+      <ScrollRevealInit />
       {/* Hero */}
       <section className="home-hero">
         <p className="home-hero-persian">زند</p>
@@ -42,7 +44,7 @@ export default async function HomePage({
       <section className="home-section" style={{ background: "linear-gradient(180deg, #F9F0F0 0%, #FDFDFC 50%, #FDF5F3 100%)" }}>
         <div className="home-section-inner">
           <p className="home-section-label">Learn Persian</p>
-          <h2 className="home-section-title">
+          <h2 className="home-section-title scroll-reveal">
             There has never been a proper way to learn Farsi online
           </h2>
           <p className="home-section-desc">
@@ -52,21 +54,21 @@ export default async function HomePage({
           </p>
 
           <div className="home-features">
-            <div className="home-feature-card feature-bg-1">
+            <div className="home-feature-card feature-bg-1 scroll-reveal delay-1">
               <h3>Journey</h3>
               <p>A guided path from your first letter to full conversation, built for how Farsi actually works.</p>
             </div>
-            <div className="home-feature-card feature-bg-2">
+            <div className="home-feature-card feature-bg-2 scroll-reveal delay-2">
               <h3>Flip Cards</h3>
               <p>Learn vocabulary through repetition, with pronunciation and transliteration on every card.</p>
             </div>
-            <div className="home-feature-card feature-bg-3">
+            <div className="home-feature-card feature-bg-3 scroll-reveal delay-3">
               <h3>AI Translation</h3>
               <p>Speak in English or Farsi and hear the translation spoken back. A conversation partner in your pocket.</p>
             </div>
           </div>
 
-          <div className="home-mockup-row" style={{ marginTop: "3rem" }}>
+          <div className="home-mockup-scroll" style={{ marginTop: "3rem" }}>
             <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/home-lang.png" alt="Learn Persian" /></div>
             <div className="phone-frame phone-frame-sm phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/lang-flipcard-single.jpg" alt="Flip cards" /></div>
             <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/lang-translate.jpg" alt="AI Translation" /></div>
@@ -79,7 +81,7 @@ export default async function HomePage({
         <div className="tile-pattern" />
         <div className="home-section-inner" style={{ position: "relative", zIndex: 1 }}>
           <p className="home-section-label">Explore Iran</p>
-          <h2 className="home-section-title">
+          <h2 className="home-section-title scroll-reveal">
             Discover the world behind the headlines
           </h2>
           <p className="home-section-desc">
@@ -87,7 +89,7 @@ export default async function HomePage({
             to <em>the Iran of today</em>. Written to inform, not to tell you what to think.
           </p>
 
-          <div className="home-mockup-row">
+          <div className="home-mockup-scroll">
             <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/home-explore.png" alt="Explore Iran" /></div>
             <div className="phone-frame phone-frame-sm phone-frame-float phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/explore-history.png" alt="History" /></div>
             <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/history-article.jpg" alt="Article" /></div>
@@ -99,7 +101,7 @@ export default async function HomePage({
       <section className="home-section" style={{ background: "linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 100%)" }}>
         <div className="home-section-inner">
           <p className="home-section-label">Local</p>
-          <h2 className="home-section-title">
+          <h2 className="home-section-title scroll-reveal">
             Find Iranian-owned businesses worldwide
           </h2>
           <p className="home-section-desc">
@@ -108,21 +110,21 @@ export default async function HomePage({
           </p>
 
           <div className="home-locals-preview">
-            <div className="home-locals-card">
+            <div className="home-locals-card scroll-reveal delay-1">
               <div className="home-locals-card-img"><img src="/mockups/home-local.png" alt="Local businesses" style={{width:"100%",height:"100%",objectFit:"cover"}} /></div>
               <div className="home-locals-card-body">
                 <h3>Eyval</h3>
                 <p>Restaurants · Brooklyn, United States</p>
               </div>
             </div>
-            <div className="home-locals-card">
+            <div className="home-locals-card scroll-reveal delay-2">
               <div className="home-locals-card-img"><span>Photo</span></div>
               <div className="home-locals-card-body">
                 <h3>Hafez</h3>
                 <p>Restaurants · London</p>
               </div>
             </div>
-            <div className="home-locals-card">
+            <div className="home-locals-card scroll-reveal delay-3">
               <div className="home-locals-card-img"><span>Photo</span></div>
               <div className="home-locals-card-body">
                 <h3>Ariana&#39;s Persian Kitchen</h3>
