@@ -130,7 +130,6 @@ export function Nav({ lang }: { lang: Locale }) {
           </div>
         </>
       )}
-      )}
 
       <style>{String.raw`
         @media (min-width: 769px) {
