@@ -25,7 +25,7 @@ export default async function AboutPage({
           <p className="about-hero-label">{isFa ? "داستان پشت زند" : "The story behind Zand"}</p>
           <h1>{isFa ? "جایی برای بازگشت به خانه" : "A place to come home to"}</h1>
           <p className="about-hero-sub">
-            How a question about identity became a platform for an entire diaspora.
+            {isFa ? "چگونه یک سؤال دربارهٔ هویت به یک پلتفرم برای یک دیاسپورای کامل تبدیل شد." : "How a question about identity became a platform for an entire diaspora."}
           </p>
         </header>
         <div className="about-rule">
