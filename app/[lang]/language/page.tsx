@@ -42,7 +42,7 @@ export default async function LanguagePage({
               </p>
             </div>
             <div className="lang-section-visual">
-              <div className="phone-frame">
+              <div className="phone-frame phone-frame-tilt-right phone-shadow">
                 <div className="phone-frame-notch" />
                 <img src="/mockups/lang-lesson.png" alt="Zand lesson view" />
               </div>
@@ -66,11 +66,11 @@ export default async function LanguagePage({
             </div>
             <div className="lang-section-visual">
               <div style={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center" }}>
-                <div className="phone-frame phone-frame-sm">
+                <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow-soft">
                   <div className="phone-frame-notch" />
                   <img src="/mockups/lang-flipcard-grid-letters.jpg" alt="Flip cards grid view" />
                 </div>
-                <div className="phone-frame">
+                <div className="phone-frame phone-frame-float phone-shadow-deep">
                   <div className="phone-frame-notch" />
                   <img src="/mockups/lang-flipcard-single.jpg" alt="Flip card expanded view" />
                 </div>
@@ -94,7 +94,7 @@ export default async function LanguagePage({
               </p>
             </div>
             <div className="lang-section-visual">
-              <div className="phone-frame">
+              <div className="phone-frame phone-frame-tilt-left phone-shadow">
                 <div className="phone-frame-notch" />
                 <img src="/mockups/lang-quiz.png" alt="Quiz view in Zand" />
               </div>
@@ -118,7 +118,7 @@ export default async function LanguagePage({
               </p>
             </div>
             <div className="lang-section-visual">
-              <div className="phone-frame" style={{ borderColor: "#333" }}>
+              <div className="phone-frame phone-frame-tilt-right phone-shadow-deep" style={{ borderColor: "#333" }}>
                 <div className="phone-frame-notch" style={{ background: "#333" }} />
                 <img src="/mockups/lang-translate.jpg" alt="AI translation view" />
               </div>

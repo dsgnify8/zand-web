@@ -469,3 +469,20 @@
     flex-shrink: 0;
   }
 }
+
+/* Fix timeline dot alignment on mobile */
+@media (max-width: 768px) {
+  .history-timeline {
+    padding-left: 2rem;
+  }
+
+  .history-timeline::before {
+    left: 6px;
+  }
+
+  .history-era::before {
+    left: -2.05rem;
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -83,60 +83,53 @@ export function Nav({ lang }: { lang: Locale }) {
       </div>
 
       {open && (
-        <div style={{
-          position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh",
-          background: "#FAF8F5", zIndex: 9999,
-          display: "flex", flexDirection: "column",
-        }}>
+        <>
+          <div
+            onClick={() => setOpen(false)}
+            style={{
+              position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+              background: "rgba(23,23,23,0.12)", zIndex: 9998,
+            }}
+          />
           <div style={{
-            display: "flex", justifyContent: "space-between", alignItems: "center",
-            padding: "1.2rem 2rem",
-            borderBottom: "1px solid rgba(23,23,23,0.06)",
+            position: "fixed", top: 0, left: 0, right: 0,
+            background: "#FAF8F5", zIndex: 9999,
+            borderRadius: "0 0 16px 16px",
+            boxShadow: "0 12px 40px rgba(23,23,23,0.1)",
           }}>
-            <span style={{
-              fontWeight: 500, fontSize: "0.85rem", letterSpacing: "0.25em", color: "#171717",
-            }}>ZAND</span>
-            <button onClick={() => setOpen(false)} style={{
-              background: "none", border: "none", cursor: "pointer",
-              fontSize: "1.6rem", color: "#171717", padding: "4px", lineHeight: 1,
-            }}>{String.fromCharCode(215)}</button>
-          </div>
-
-          <div style={{ padding: "1.5rem 2rem", flex: 1 }}>
-            {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={"/" + lang + "/" + href}
-                onClick={() => setOpen(false)}
-                style={{
-                  display: "block", padding: "1.1rem 0",
-                  fontSize: "1.3rem", fontWeight: 300, color: "#171717",
-                  textDecoration: "none",
-                  borderBottom: "1px solid rgba(23,23,23,0.06)",
-                }}
-              >
-                {label[lang]}
-              </Link>
-            ))}
-          </div>
-
-          <div style={{
-            padding: "1.5rem 2rem",
-            borderTop: "1px solid rgba(23,23,23,0.06)",
-            display: "flex", justifyContent: "space-between", alignItems: "center",
-          }}>
-            <span style={{
-              fontSize: "0.72rem", fontWeight: 500, letterSpacing: "0.25em", color: "#6B6B6B",
-            }}>ZAND</span>
-            <Link href={otherPath} onClick={() => setOpen(false)} style={{
-              fontSize: "0.82rem", fontWeight: 400, color: "#6B6B6B",
-              textDecoration: "none", border: "1px solid rgba(23,23,23,0.15)",
-              padding: "0.35rem 0.85rem", borderRadius: "2rem",
+            <div style={{
+              display: "flex", justifyContent: "space-between", alignItems: "center",
+              padding: "1.2rem 2rem",
+              borderBottom: "1px solid rgba(23,23,23,0.06)",
             }}>
-              {lang === "en" ? "فارسی" : "English"}
-            </Link>
+              <span style={{
+                fontWeight: 500, fontSize: "0.85rem", letterSpacing: "0.25em", color: "#171717",
+              }}>ZAND</span>
+              <button onClick={() => setOpen(false)} style={{
+                background: "none", border: "none", cursor: "pointer",
+                fontSize: "1.4rem", color: "#171717", padding: "4px", lineHeight: 1,
+              }}>{String.fromCharCode(215)}</button>
+            </div>
+            <div style={{ padding: "0.5rem 2rem 2rem" }}>
+              {links.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={"/" + lang + "/" + href}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    display: "block", padding: "0.9rem 0",
+                    fontSize: "1.2rem", fontWeight: 300, color: "#171717",
+                    textDecoration: "none",
+                    borderBottom: "1px solid rgba(23,23,23,0.05)",
+                  }}
+                >
+                  {label[lang]}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        </>
+      )}
       )}
 
       <style>{String.raw`

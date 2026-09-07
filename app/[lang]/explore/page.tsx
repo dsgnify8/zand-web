@@ -80,8 +80,8 @@ export default async function ExplorePage({
             </div>
 
             <div className="history-mockups">
-              <div className="phone-frame phone-frame-sm"><div className="phone-frame-notch" /><img src="/mockups/explore-history.png" alt="History in Zand" /></div>
-              <div className="phone-frame phone-frame-sm"><div className="phone-frame-notch" /><img src="/mockups/history-article.jpg" alt="Article in Zand" /></div>
+              <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/explore-history.png" alt="History in Zand" /></div>
+              <div className="phone-frame phone-frame-sm phone-frame-float phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/history-article.jpg" alt="Article in Zand" /></div>
             </div>
           </div>
         </div>

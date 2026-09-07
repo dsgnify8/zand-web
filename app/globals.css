@@ -163,3 +163,51 @@ body {
 .phone-frame-lg {
   max-width: 320px;
 }
+
+/* ── Phone mockup variants ── */
+.phone-frame-tilt-left {
+  transform: perspective(800px) rotateY(8deg) rotateX(2deg);
+  transition: transform 0.4s ease;
+}
+
+.phone-frame-tilt-left:hover {
+  transform: perspective(800px) rotateY(2deg) rotateX(0deg);
+}
+
+.phone-frame-tilt-right {
+  transform: perspective(800px) rotateY(-8deg) rotateX(2deg);
+  transition: transform 0.4s ease;
+}
+
+.phone-frame-tilt-right:hover {
+  transform: perspective(800px) rotateY(-2deg) rotateX(0deg);
+}
+
+.phone-frame-float {
+  transform: perspective(800px) rotateY(-5deg) rotateX(3deg) translateY(-8px);
+  transition: transform 0.4s ease;
+}
+
+.phone-frame-float:hover {
+  transform: perspective(800px) rotateY(0deg) rotateX(0deg) translateY(-12px);
+}
+
+.phone-shadow {
+  box-shadow: 0 25px 60px rgba(23,23,23,0.2), 0 0 0 1px rgba(23,23,23,0.08);
+}
+
+.phone-shadow-soft {
+  box-shadow: 0 15px 40px rgba(23,23,23,0.12), 0 0 0 1px rgba(23,23,23,0.06);
+}
+
+.phone-shadow-deep {
+  box-shadow: 0 30px 80px rgba(23,23,23,0.25), 0 0 0 1px rgba(23,23,23,0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-frame-tilt-left,
+  .phone-frame-tilt-right,
+  .phone-frame-float {
+    transform: none;
+  }
+}
