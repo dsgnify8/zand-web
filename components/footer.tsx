@@ -11,6 +11,7 @@ const footerLinks = [
 ];
 
 export function Footer({ lang }: { lang: Locale }) {
+  const contactLabel = lang === "en" ? "Contact" : "تماس";
   return (
     <footer style={{
       background: "#171717",
@@ -21,44 +22,26 @@ export function Footer({ lang }: { lang: Locale }) {
       gap: "1.5rem",
     }}>
       <div style={{
-        fontWeight: 500,
-        fontSize: "0.8rem",
-        letterSpacing: "0.25em",
-        color: "rgba(248,246,242,0.4)",
+        fontWeight: 500, fontSize: "0.8rem",
+        letterSpacing: "0.25em", color: "rgba(248,246,242,0.4)",
       }}>
         ZAND
       </div>
       <div style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        gap: "1rem 1.5rem",
-        listStyle: "none",
-        margin: 0,
-        padding: 0,
+        display: "flex", flexWrap: "wrap",
+        justifyContent: "center", gap: "1rem 1.5rem",
       }}>
         {footerLinks.map(({ href, label }) => (
-          <Link
-            key={href}
-            href={"/" + lang + "/" + href}
-            style={{
-              fontSize: "0.78rem",
-              color: "rgba(248,246,242,0.35)",
-              textDecoration: "none",
-            }}
-          >
+          <Link key={href} href={"/" + lang + "/" + href} style={{
+            fontSize: "0.78rem", color: "rgba(248,246,242,0.35)", textDecoration: "none",
+          }}>
             {label[lang]}
           </Link>
         ))}
-        
-          href="mailto:admin@zandapplication.com"
-          style={{
-            fontSize: "0.78rem",
-            color: "rgba(248,246,242,0.35)",
-            textDecoration: "none",
-          }}
-        >
-          {lang === "en" ? "Contact" : "تماس"}
+        <a href="mailto:admin@zandapplication.com" style={{
+          fontSize: "0.78rem", color: "rgba(248,246,242,0.35)", textDecoration: "none",
+        }}>
+          {contactLabel}
         </a>
       </div>
     </footer>
