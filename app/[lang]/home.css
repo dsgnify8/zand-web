@@ -658,3 +658,45 @@ main {
 @media (prefers-reduced-motion: reduce) {
   main { animation: none; }
 }
+
+/* TPM article cards — text-only, elegant */
+.home-tpm-article-card {
+  background: linear-gradient(135deg, rgba(184, 146, 74, 0.04), rgba(139, 29, 46, 0.02)) !important;
+  border: 1px solid rgba(184, 146, 74, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem 1.5rem !important;
+  cursor: default !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+  text-decoration: none !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+.home-tpm-article-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(184, 146, 74, 0.08) !important;
+}
+
+.home-tpm-article-tag {
+  font-size: 0.68rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #B8924A !important;
+  margin-bottom: 1rem !important;
+  padding: 0 !important;
+}
+
+.home-tpm-article-card h3 {
+  padding: 0 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.home-tpm-article-card p {
+  padding: 0 !important;
+}
+
+/* Remove old image styles */
+.home-tpm-article-img {
+  display: none !important;
+}

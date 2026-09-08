@@ -181,24 +181,24 @@ export default async function HomePage({
         </p>
 
         <div className="home-tpm-articles">
-          <a href="#" className="home-tpm-article-card">
-            <div className="home-tpm-article-img"><span>Article cover</span></div>
+          <div className="home-tpm-article-card scroll-reveal delay-1">
+            <p className="home-tpm-article-tag">Film</p>
             <h3>The New Wave of Iranian Cinema</h3>
             <p>How a generation of filmmakers is redefining what Iranian stories look like on screen.</p>
-          </a>
-          <a href="#" className="home-tpm-article-card">
-            <div className="home-tpm-article-img"><span>Article cover</span></div>
+          </div>
+          <div className="home-tpm-article-card scroll-reveal delay-2">
+            <p className="home-tpm-article-tag">Design</p>
             <h3>Tehran&#39;s Design Underground</h3>
             <p>Inside the studios and collectives shaping Iran&#39;s visual identity today.</p>
-          </a>
-          <a href="#" className="home-tpm-article-card">
-            <div className="home-tpm-article-img"><span>Article cover</span></div>
+          </div>
+          <div className="home-tpm-article-card scroll-reveal delay-3">
+            <p className="home-tpm-article-tag">Music</p>
             <h3>What Persian Music Owes to Poetry</h3>
             <p>The thread that runs from Hafez to today&#39;s Iranian artists.</p>
-          </a>
+          </div>
         </div>
 
-        <a href="#" className="home-section-link home-tpm-readmore">
+        <a href={"/" + lang + "/app"} className="home-section-link home-tpm-readmore">
           Read more in the app →
         </a>
       </section>
