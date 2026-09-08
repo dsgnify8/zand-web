@@ -39,13 +39,13 @@ export default async function AboutPage({
           <p className="lede">
             {isFa
             ? <>زند با یک خلاء شروع شد. نه یک خلاء بازار — یک خلاء شخصی. بزرگ شدن در خارج از ایران، با پدر و مادری که از کشوری که ترکش کرده بودند حرف می‌زدند اما همیشه جایی داستان متوقف می‌شد. دنیایی پشت هویتت بود که حسش می‌کردی اما <em>دسترسی نداشتی</em>.</>
-            : <>Zand started with a gap. Not a market gap — a personal one. Growing up outside of Iran, with parents who talked about the country they&apos;d left but always stopped short of the full story. There was a world behind your identity that you could sense but <em>couldn&apos;t access</em>.</>
+            : <>Zand started with a gap. Not a market gap — a personal one. We grew up outside of Iran, with parents who talked about the country they&apos;d left but always stopped short of the full story. There was a world behind our identity that we could sense but <em>couldn&apos;t access</em>.</>
             }
           </p>
           <p>
             {isFa
             ? <>یک دوست نزدیک که تاریخ ایران را خوب می‌شناخت معلمی اتفاقی شد. یک سؤال ساده به ساعت‌ها گفت‌و‌گو تبدیل می‌شد — یک رویداد تاریخی، یک تحول فرهنگی، شخصیتی که هرگز اسمش را نشنیده بود. هر بار با این فکر بیرون می‌آمد که <strong>چقدر چیزهایی بود که هرگز یادش نداده بودند</strong>. و شروع کرد به فکر کردن که چند ایرانی دیگر همین حس را دارند.</>
-            : <>A close friend who knew Iranian history well became an accidental teacher. A simple question would turn into hours of conversation — a historical event, a cultural shift, a person she&apos;d never heard of. She&apos;d leave each one realising{" "}<strong>how much she&apos;d never been taught</strong> about her own country. And she started to wonder how many other Iranians felt the same way.</>
+            : <>A close friend who knew Iranian history well became an accidental teacher. A simple question would turn into hours of conversation — a historical event, a cultural shift, a person we&apos;d never heard of. We&apos;d leave each one realising{" "}<strong>how much she&apos;d never been taught</strong> about her own country. And we started to wonder how many other Iranians felt the same way.</>
             }
           </p>
 
@@ -69,13 +69,13 @@ export default async function AboutPage({
             <p>
               {isFa
               ? <>در اواخر ۲۰۲۵ و اوایل ۲۰۲۶، وقتی اعتراضات و درگیری ایران را دوباره به تیترهای جهانی برد، اتفاقی را میان ایرانی‌های سراسر جهان دید. واکنشی جمعی که <em>از نسل‌ها و جغرافیا فراتر رفت</em>.</>
-              : <>In late 2025 and early 2026, as protests and conflict brought Iran back into global headlines, she watched something happen among Iranians around the world. A collective reaction that <em>crossed generations and geography</em>. People were confronting what it meant to be Iranian in a way most of them hadn&apos;t before.</>
+              : <>In late 2025 and early 2026, as protests and conflict brought Iran back into global headlines, we watched something happen among Iranians around the world. A collective reaction that <em>crossed generations and geography</em>. People were confronting what it meant to be Iranian in a way most of them hadn&apos;t before.</>
               }
             </p>
             <p>
               {isFa
               ? <>همش به آدم‌هایی فکر می‌کرد که مثل خودش بودند — کسانی که حس می‌کردند باید چیزی را بفهمند که <strong>هرگز یادشان نداده بودند</strong>. اطلاعاتی که دنبالش می‌گشت همه‌جا پراکنده بود، اگر اصلاً می‌دانستی کجا بگردی.</>
-              : <>She kept thinking about the ones who were like her — people who felt they were supposed to understand something they had{" "}<strong>never actually been taught</strong>. The information she was looking for was scattered everywhere, if you knew where to look at all. Most people didn&apos;t.</>
+              : <>We kept thinking about the ones who were like us — people who felt they were supposed to understand something they had{" "}<strong>never actually been taught</strong>. The information we were looking for was scattered everywhere, if you knew where to look at all. Most people didn&apos;t.</>
               }
             </p>
           </div>
@@ -110,8 +110,8 @@ export default async function AboutPage({
           <h2 className="about-section-heading">{isFa ? "صدای درست" : "The right voice"}</h2>
           <p>
             {isFa
-            ? <>یک بخش بود که بنیان‌گذار می‌دانست تنهایی نمی‌تواند بسازد. اگر زند قرار بود ایران را نمایندگی کند، کسانی که الآن در آن زندگی می‌کنند باید بخشی از آن باشند. به همین دلیل همکاری با <strong>در پرشین مگ</strong> اهمیت دارد. TPM با بیش از ۱۵۰ هزار دنبال‌کننده و صدایی ریشه‌دار در <em>ایران امروز</em> — هنرمندان، خالقان و استعدادهای نوظهور. دنیایشان بخشی از زند شد، تا پلتفرم فقط از ایران حرف نزند — نشان دهد ایران امروز چه می‌سازد.</>
-            : <>There was one piece the founder knew she couldn&apos;t build alone. If Zand was going to represent Iran, the people already living it had to be part of it. That&apos;s why the partnership with <strong>The Persian Mag</strong> matters. TPM has a following of over 150,000 and an editorial voice rooted in{" "}<em>the Iran that exists right now</em> — its artists, creators, and emerging talent. Their world became part of Zand&apos;s, so the platform doesn&apos;t just talk about Iran. It shows you what Iran is making today.</>
+            ? <>یک بخش بود که می‌دانستیم تنهایی نمی‌توانیم بسازیم. اگر زند قرار بود ایران را نمایندگی کند، کسانی که الآن در آن زندگی می‌کنند باید بخشی از آن باشند. به همین دلیل همکاری با <strong>در پرشین مگ</strong> اهمیت دارد. TPM با بیش از ۱۵۰ هزار دنبال‌کننده و صدایی ریشه‌دار در <em>ایران امروز</em> — هنرمندان، خالقان و استعدادهای نوظهور. دنیایشان بخشی از زند شد، تا پلتفرم فقط از ایران حرف نزند — نشان دهد ایران امروز چه می‌سازد.</>
+            : <>There was one piece we knew we couldn&apos;t build alone. If Zand was going to represent Iran, the people already living it had to be part of it. That&apos;s why the partnership with <strong>The Persian Mag</strong> matters. TPM has a following of over 150,000 and an editorial voice rooted in{" "}<em>the Iran that exists right now</em> — its artists, creators, and emerging talent. Their world became part of Zand&apos;s, so the platform doesn&apos;t just talk about Iran. It shows you what Iran is making today.</>
             }
           </p>
           <div className="about-placeholder" style={{overflow:"hidden"}}>
@@ -151,11 +151,11 @@ export default async function AboutPage({
         <div className="about-closing-inner">
           <blockquote>
             {isFa
-            ? "«می‌دانم چه حسیست که به بخشی از خودت کنجکاو باشی و ندانی از کجا شروع کنی. برای همین خواستم جایی را بسازم که آرزو داشتم وقتی بزرگ می‌شدم داشتم.»"
-            : "\u201CI know what it\u2019s like to feel curious about a part of yourself and not quite know where to begin. So I wanted to build the place I wish I had growing up.\u201D"
+            ? "«می‌دانیم چه حسیست که به بخشی از خودت کنجکاو باشی و ندانی از کجا شروع کنی. برای همین خواستیم جایی را بسازیم که آرزو داشتم وقتی بزرگ می‌شدم داشتم.»"
+            : "\u201CWe know what it\u2019s like to feel curious about a part of yourself and not quite know where to begin. So We wanted to build the place we wish we had growing up.\u201D"
             }
           </blockquote>
-          <p className="about-attr">Nojan Zandesh, Founder</p>
+          <p className="about-attr">The Zand Team</p>
         </div>
       </section>
     </>
