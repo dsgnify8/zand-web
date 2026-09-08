@@ -360,7 +360,7 @@
 /* ── TPM BAND ── */
 .home-tpm-band {
   padding: 5rem 3rem;
-  background: linear-gradient(180deg, rgba(184,146,74,0.04) 0%, #FDFDFC 100%);
+  background: linear-gradient(180deg, #FBF6F0 0%, rgba(184,146,74,0.04) 20%, #FDFDFC 100%);
   text-align: center;
   position: relative;
 }

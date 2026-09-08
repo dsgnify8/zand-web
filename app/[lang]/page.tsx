@@ -57,7 +57,7 @@ export default async function HomePage({
       </section>
 
       {/* Language */}
-      <section className="home-section" style={{ background: "transparent" }}>
+      <section className="home-section" style={{ background: "linear-gradient(180deg, #F9F0F0 0%, #FDFDFC 12%, #FDFDFC 100%)" }}>
         <div className="home-section-inner">
           <p className="home-section-label">{tx.homeLearnLabel}</p>
           <h2 className="home-section-title scroll-reveal">
@@ -113,7 +113,7 @@ export default async function HomePage({
       </section>
 
       {/* Locals */}
-      <section className="home-section" style={{ background: "linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 100%)" }}>
+      <section className="home-section" style={{ background: "linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 85%, #FBF6F0 100%)" }}>
         <div className="home-section-inner">
           <p className="home-section-label">{tx.homeLocalLabel}</p>
           <h2 className="home-section-title scroll-reveal">
