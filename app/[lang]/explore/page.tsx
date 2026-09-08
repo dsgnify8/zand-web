@@ -101,19 +101,19 @@ export default async function ExplorePage({
           </p>
 
           <div className="lit-poets">
-            <div className="lit-poet-card poet-bg-1">
+            <div className="lit-poet-card poet-ferdowsi">
               <p className="poet-persian">فردوسی</p>
               <h3>Ferdowsi</h3>
               <p className="poet-title">The Keeper of the Language</p>
               <p className="poet-dates">940 — 1020</p>
             </div>
-            <div className="lit-poet-card poet-bg-2">
+            <div className="lit-poet-card poet-saadi">
               <p className="poet-persian">سعدی</p>
               <h3>Saadi</h3>
               <p className="poet-title">The Voice of Wisdom</p>
               <p className="poet-dates">c. 1210 — 1291</p>
             </div>
-            <div className="lit-poet-card poet-bg-3">
+            <div className="lit-poet-card poet-hafez">
               <p className="poet-persian">حافظ</p>
               <h3>Hafez</h3>
               <p className="poet-title">The Tongue of the Unseen</p>

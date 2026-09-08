@@ -486,3 +486,20 @@
     height: 12px;
   }
 }
+
+
+/* Poet card image backgrounds */
+.lit-poet-card {
+  background-size: cover;
+  background-position: center;
+}
+
+.lit-poet-card.poet-ferdowsi { background-image: url('/mockups/poet-ferdowsi.jpg'); }
+.lit-poet-card.poet-saadi { background-image: url('/mockups/poet-saadi.jpg'); }
+.lit-poet-card.poet-hafez { background-image: url('/mockups/poet-hafez.jpg'); }
+
+@media (max-width: 768px) {
+  .lit-poet-card {
+    aspect-ratio: 4 / 3;
+  }
+}

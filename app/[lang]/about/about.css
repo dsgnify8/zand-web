@@ -358,3 +358,13 @@
   .about-wine h2 { font-size: 2.2rem; }
   .about-closing { padding: 4.5rem 1.5rem; }
 }
+
+
+/* Reduce space between TPM and Locals */
+.bg-tpm + .bg-locals {
+  margin-top: -2rem;
+}
+
+.bg-tpm .about-article {
+  padding-bottom: 2rem;
+}

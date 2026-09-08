@@ -1,9 +1,9 @@
 /* ── Locals page ── */
 
 .local-hero {
-  padding: 10rem 3rem 4rem;
+  padding: 10rem 3rem 5rem;
   text-align: center;
-  background: linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 50%, #F9F0F0 100%);
+  background: linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 40%, #F9F0F0 80%, #FDFDFC 100%);
   position: relative;
   overflow: hidden;
 }
@@ -427,4 +427,98 @@
   border-color: rgba(139, 29, 46, 0.2);
   background: rgba(249, 240, 240, 0.65);
   box-shadow: 0 0 0 3px rgba(139, 29, 46, 0.04);
+}
+
+
+/* Everywhere button — compact, next to city input */
+.local-location-picker {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.local-everywhere-btn {
+  padding: 0.7rem 1rem !important;
+  font-size: 0.78rem !important;
+  background: rgba(139, 29, 46, 0.04) !important;
+  border-color: rgba(139, 29, 46, 0.08) !important;
+  color: #8B1D2E !important;
+}
+
+.local-everywhere-btn:hover {
+  background: rgba(139, 29, 46, 0.08) !important;
+}
+
+/* Scroll to top button */
+.local-scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(253, 253, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  box-shadow: 0 4px 16px rgba(23, 23, 23, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #171717;
+  z-index: 40;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.local-scroll-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(23, 23, 23, 0.15);
+}
+
+/* Bottom app CTA */
+.local-app-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 50%, #F9F0F0 100%);
+}
+
+.local-app-cta p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #3D3D3D;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.local-app-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #171717;
+  color: #F8F6F2;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.local-app-cta a:hover {
+  background: #3D3D3D;
+}
+
+@media (max-width: 768px) {
+  .local-location-picker {
+    flex-direction: row !important;
+  }
+  
+  .local-everywhere-btn {
+    width: auto !important;
+  }
 }

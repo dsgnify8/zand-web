@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { businessPhotoUrl } from "@/lib/supabase";
 
@@ -36,6 +36,13 @@ export function LocalGrid({
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [cityInput, setCityInput] = useState("");
   const [showCityDropdown, setShowCityDropdown] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 1200);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const cities = useMemo(
     () => Array.from(new Set(businesses.map((b) => b.city).filter(Boolean))) as string[],
@@ -203,6 +210,27 @@ export function LocalGrid({
             })}
           </div>
         )}
+      </div>
+
+      {/* Scroll to top */}
+      {showScrollTop && (
+        <button
+          className="local-scroll-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+        >
+          {String.fromCharCode(8593)}
+        </button>
+      )}
+
+      {/* App CTA */}
+      <div className="local-app-cta">
+        <p>{lang === "fa"
+          ? "\u0647\u0645\u0647\u0654 \u06A9\u0633\u0628\u200C\u0648\u06A9\u0627\u0631\u0647\u0627 \u0648 \u062F\u0627\u0633\u062A\u0627\u0646\u200C\u0647\u0627\u06CC\u0634\u0627\u0646 \u0631\u0627 \u062F\u0631 \u0627\u067E\u0644\u06CC\u06A9\u06CC\u0634\u0646 \u06A9\u0627\u0648\u0634 \u06A9\u0646\u06CC\u062F"
+          : "Explore all businesses and their stories on the app"}</p>
+        <a href="#">
+          {lang === "fa" ? "\u062F\u0627\u0646\u0644\u0648\u062F \u0627\u067E\u0644\u06CC\u06A9\u06CC\u0634\u0646" : "Download the App"}
+        </a>
       </div>
     </>
   );
