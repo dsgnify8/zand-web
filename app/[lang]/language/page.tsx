@@ -36,7 +36,7 @@ export default async function LanguagePage({
             <div className="lang-section-visual">
               <div className="phone-frame phone-frame-tilt-right phone-shadow">
                 <div className="phone-frame-notch" />
-                <img src="/mockups/lang-lesson.png" alt="Zand lesson view" />
+                <img loading="lazy" src="/mockups/lang-lesson.jpg" alt="Zand lesson view" />
               </div>
             </div>
           </div>
@@ -58,11 +58,11 @@ export default async function LanguagePage({
               <div style={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center" }}>
                 <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow-soft">
                   <div className="phone-frame-notch" />
-                  <img src="/mockups/lang-flipcard-grid-letters.jpg" alt="Flip cards grid view" />
+                  <img loading="lazy" src="/mockups/lang-flipcard-grid-letters.jpg" alt="Flip cards grid view" />
                 </div>
                 <div className="phone-frame phone-frame-float phone-shadow-deep">
                   <div className="phone-frame-notch" />
-                  <img src="/mockups/lang-flipcard-single.jpg" alt="Flip card expanded view" />
+                  <img loading="lazy" src="/mockups/lang-flipcard-single.jpg" alt="Flip card expanded view" />
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@ export default async function LanguagePage({
             <div className="lang-section-visual">
               <div className="phone-frame phone-frame-tilt-left phone-shadow">
                 <div className="phone-frame-notch" />
-                <img src="/mockups/lang-quiz.png" alt="Quiz view in Zand" />
+                <img loading="lazy" src="/mockups/lang-quiz.jpg" alt="Quiz view in Zand" />
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default async function LanguagePage({
             <div className="lang-section-visual">
               <div className="phone-frame phone-frame-tilt-right phone-shadow-deep" style={{ borderColor: "#333" }}>
                 <div className="phone-frame-notch" style={{ background: "#333" }} />
-                <img src="/mockups/lang-translate.jpg" alt="AI translation view" />
+                <img loading="lazy" src="/mockups/lang-translate.jpg" alt="AI translation view" />
               </div>
             </div>
           </div>

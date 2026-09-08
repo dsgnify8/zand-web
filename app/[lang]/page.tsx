@@ -84,9 +84,9 @@ export default async function HomePage({
 
           <div style={{ marginTop: "3rem" }}>
             <ScrollCenter>
-              <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/home-lang.png" alt="Learn Persian" /></div>
-              <div className="phone-frame phone-frame-sm phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/lang-flipcard-single.jpg" alt="Flip cards" /></div>
-              <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/lang-translate.jpg" alt="AI Translation" /></div>
+              <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/home-lang.jpg" alt="Learn Persian" /></div>
+              <div className="phone-frame phone-frame-sm phone-shadow-deep"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/lang-flipcard-single.jpg" alt="Flip cards" /></div>
+              <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/lang-translate.jpg" alt="AI Translation" /></div>
             </ScrollCenter>
           </div>
         </div>
@@ -105,9 +105,9 @@ export default async function HomePage({
           </p>
 
           <div className="home-mockup-scroll">
-            <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/home-explore.png" alt="Explore Iran" /></div>
-            <div className="phone-frame phone-frame-sm phone-frame-float phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/explore-history.png" alt="History" /></div>
-            <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/history-article.jpg" alt="Article" /></div>
+            <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/home-explore.jpg" alt="Explore Iran" /></div>
+            <div className="phone-frame phone-frame-sm phone-frame-float phone-shadow-deep"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/explore-history.jpg" alt="History" /></div>
+            <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/history-article.jpg" alt="Article" /></div>
           </div>
         </div>
       </section>

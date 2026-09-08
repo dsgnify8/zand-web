@@ -73,8 +73,8 @@ export default async function ExplorePage({
             </div>
 
             <div className="history-mockups">
-              <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/explore-history.png" alt="History in Zand" /></div>
-              <div className="phone-frame phone-frame-sm phone-frame-float phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/history-article.jpg" alt="Article in Zand" /></div>
+              <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/explore-history.jpg" alt="History in Zand" /></div>
+              <div className="phone-frame phone-frame-sm phone-frame-float phone-shadow-deep"><div className="phone-frame-notch" /><img loading="lazy" src="/mockups/history-article.jpg" alt="Article in Zand" /></div>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default async function ExplorePage({
           </p>
 
           <div className="geo-placeholder" style={{padding:"0",overflow:"hidden"}}>
-            <img src="/mockups/iran-map.png" alt="Map of Iran" style={{width:"100%",height:"100%",objectFit:"contain"}} />
+            <img loading="lazy" src="/mockups/iran-map.jpg" alt="Map of Iran" style={{width:"100%",height:"100%",objectFit:"contain"}} />
           </div>
         </div>
       </section>
