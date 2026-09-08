@@ -96,6 +96,7 @@ export default async function HomePage({
               <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/lang-translate.jpg" alt="AI Translation" /></div>
             </ScrollCenter>
           </div>
+        </div>
       </section>
 
       {/* Explore — wine band */}
