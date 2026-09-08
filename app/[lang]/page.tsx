@@ -2,6 +2,7 @@ import Link from "next/link";
 import { supabase, businessPhotoUrl } from "@/lib/supabase";
 import { t } from "@/lib/translations";
 import { ScrollRevealInit } from "@/components/scroll-reveal";
+import { ScrollCenter } from "@/components/scroll-center";
 import "./home.css";
 
 export const revalidate = 300;
@@ -88,12 +89,12 @@ export default async function HomePage({
             </div>
           </div>
 
-          <div className="home-mockup-scroll home-mockup-scroll-center" style={{ marginTop: "3rem" }}>
+          <ScrollCenter style={{ marginTop: "3rem" }}>
             <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/home-lang.png" alt="Learn Persian" /></div>
             <div className="phone-frame phone-frame-sm phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/lang-flipcard-single.jpg" alt="Flip cards" /></div>
             <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/lang-translate.jpg" alt="AI Translation" /></div>
           </div>
-        </div>
+        </ScrollCenter>
       </section>
 
       {/* Explore — wine band */}

@@ -12,30 +12,55 @@ const footerLinks = [
 
 export function Footer({ lang }: { lang: Locale }) {
   return (
-    <footer className="bg-zand-ink px-6 md:px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div className="font-sans font-medium text-[0.8rem] tracking-[0.25em] text-zand-warm-white/40">
+    <footer style={{
+      background: "#171717",
+      padding: "2.5rem 2rem",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "1.5rem",
+    }}>
+      <div style={{
+        fontWeight: 500,
+        fontSize: "0.8rem",
+        letterSpacing: "0.25em",
+        color: "rgba(248,246,242,0.4)",
+      }}>
         ZAND
       </div>
-      <ul className="flex gap-6 list-none">
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "1rem 1.5rem",
+        listStyle: "none",
+        margin: 0,
+        padding: 0,
+      }}>
         {footerLinks.map(({ href, label }) => (
-          <li key={href}>
-            <Link
-              href={`/${lang}/${href}`}
-              className="text-[0.78rem] text-zand-warm-white/30 no-underline transition-opacity duration-300 hover:text-zand-warm-white/60"
-            >
-              {label[lang]}
-            </Link>
-          </li>
-        ))}
-        <li>
-          <a
-            href="mailto:admin@zandapplication.com"
-            className="text-[0.78rem] text-zand-warm-white/30 no-underline transition-opacity duration-300 hover:text-zand-warm-white/60"
+          <Link
+            key={href}
+            href={"/" + lang + "/" + href}
+            style={{
+              fontSize: "0.78rem",
+              color: "rgba(248,246,242,0.35)",
+              textDecoration: "none",
+            }}
           >
-            {lang === "en" ? "Contact" : "تماس"}
-          </a>
-        </li>
-      </ul>
+            {label[lang]}
+          </Link>
+        ))}
+        
+          href="mailto:admin@zandapplication.com"
+          style={{
+            fontSize: "0.78rem",
+            color: "rgba(248,246,242,0.35)",
+            textDecoration: "none",
+          }}
+        >
+          {lang === "en" ? "Contact" : "تماس"}
+        </a>
+      </div>
     </footer>
   );
 }

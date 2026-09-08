@@ -635,15 +635,13 @@
 /* Center second mockup on mobile scroll */
 @media (max-width: 768px) {
   .home-mockup-scroll-center {
-    scroll-padding: 0 50%;
+    scroll-snap-type: x mandatory;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .home-mockup-scroll-center > *:first-child {
-    margin-left: calc(50vw - 110px);
-  }
-
-  .home-mockup-scroll-center > *:last-child {
-    margin-right: calc(50vw - 110px);
+  .home-mockup-scroll-center > * {
+    scroll-snap-align: center;
   }
 }
 
