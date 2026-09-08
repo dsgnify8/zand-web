@@ -17,8 +17,7 @@ export default async function LanguagePage({
         <p className="lang-hero-label">{tx.homeLearnLabel}</p>
         <h1>{tx.langHeroTitle}</h1>
         <p className="lang-hero-sub">
-          Not a translation of Duolingo. Zand teaches Persian the way it is actually
-          spoken and read \u2014 built from the ground up for the language, not adapted from another one.
+          {tx.langHeroSub}
         </p>
         <a href={"/" + lang + "/app"} className="lang-hero-cta">{tx.langHeroCta}</a>
       </section>
@@ -31,9 +30,7 @@ export default async function LanguagePage({
               <p className="lang-section-label">{tx.langJourneyLabel}</p>
               <h2 className="lang-section-title">{tx.langJourneyTitle}</h2>
               <p className="lang-section-desc">
-                A structured path that takes you through the Persian alphabet, basic vocabulary,
-                sentence structure, and real conversation \u2014 <em>step by step</em>, at your own pace.
-                Every lesson builds on the last. No guessing where to go next.
+                {tx.langJourneyDesc}{" "}<em>{tx.langJourneyDescEm}</em>{tx.langJourneyDescEnd}
               </p>
             </div>
             <div className="lang-section-visual">
@@ -54,9 +51,7 @@ export default async function LanguagePage({
               <p className="lang-section-label">{tx.langFlipLabel}</p>
               <h2 className="lang-section-title">{tx.langFlipTitle}</h2>
               <p className="lang-section-desc">
-                Every card shows the Persian word, its transliteration, and the English meaning.
-                Flip to reveal. <strong>Pronunciation is built in</strong> \u2014 you hear how each
-                word sounds as you learn it. Repetition that actually sticks.
+                {tx.langFlipDesc}{" "}<strong>{tx.langFlipDescStrong}</strong>{tx.langFlipDescEnd}
               </p>
             </div>
             <div className="lang-section-visual">
@@ -83,9 +78,7 @@ export default async function LanguagePage({
               <p className="lang-section-label">{tx.langQuizLabel}</p>
               <h2 className="lang-section-title">{tx.langQuizTitle}</h2>
               <p className="lang-section-desc">
-                After each section, short quizzes check your understanding \u2014 reading, vocabulary,
-                and comprehension. <em>You move forward when you are ready</em>, not when
-                a timer runs out.
+                {tx.langQuizDesc}{" "}<em>{tx.langQuizDescEm}</em>{tx.langQuizDescEnd}
               </p>
             </div>
             <div className="lang-section-visual">
@@ -107,9 +100,7 @@ export default async function LanguagePage({
               <p className="lang-section-label">{tx.langAiLabel}</p>
               <h2 className="lang-section-title">{tx.langAiTitle}</h2>
               <p className="lang-section-desc">
-                Say something in English and hear it in Farsi. Say it in Farsi and get
-                the English back. A live conversation partner that helps you practise
-                speaking \u2014 not just reading.
+                {tx.langAiDesc}
               </p>
             </div>
             <div className="lang-section-visual">
@@ -125,7 +116,7 @@ export default async function LanguagePage({
       {/* CTA */}
       <section className="lang-cta-band">
         <h2>{tx.langCtaTitle}</h2>
-        <p>Download Zand and begin your first lesson today.</p>
+        <p>{tx.langCtaDesc}</p>
         <a href={"/" + lang + "/app"} className="lang-hero-cta">{tx.downloadApp}</a>
       </section>
     </>

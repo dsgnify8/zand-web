@@ -8,14 +8,7 @@ export default async function ExplorePage({
 }) {
   const { lang } = await params;
   const tx = lang === "fa" ? t.fa : t.en;
-
-  if (lang === "fa") {
-    return (
-      <div style={{ paddingTop: "10rem", textAlign: "center", color: "#6B6B6B" }}>
-        نسخه فارسی به زودی
-      </div>
-    );
-  }
+  const isFa = lang === "fa";
 
   return (
     <>
@@ -25,55 +18,53 @@ export default async function ExplorePage({
         <p className="explore-hero-label">{tx.homeExploreLabel}</p>
         <h1>{tx.exploreHeroTitle}</h1>
         <p className="explore-hero-sub">
-          History, culture, identity — written from original sources,
-          designed to inform, never to tell you what to think.
+          {tx.exploreHeroSub}
         </p>
       </section>
 
       {/* Category nav */}
       <nav className="explore-cats">
-        <a href="#history" className="explore-cat-link">History</a>
-        <a href="#literature" className="explore-cat-link">Literature</a>
-        <a href="#culture" className="explore-cat-link">Culture</a>
-        <a href="#geography" className="explore-cat-link">Geography</a>
+        <a href="#history" className="explore-cat-link">{tx.catHistory}</a>
+        <a href="#literature" className="explore-cat-link">{tx.catLiterature}</a>
+        <a href="#culture" className="explore-cat-link">{tx.catCulture}</a>
+        <a href="#geography" className="explore-cat-link">{tx.catGeography}</a>
       </nav>
 
       {/* ── HISTORY ── */}
       <section id="history" className="explore-section" style={{ background: "linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 100%)" }}>
         <div className="explore-section-inner">
-          <p className="explore-section-label">History</p>
+          <p className="explore-section-label">{tx.catHistory}</p>
           <p className="explore-section-persian">تاریخ</p>
           <h2 className="explore-section-title">{tx.exploreHistoryTitle}</h2>
           <p className="explore-section-desc">
-            From the first Persian empire to the Iran of today — a continuous story
-            told through <em>original sources</em>, not textbook summaries.
+            {tx.exploreHistoryDesc}{" "}<em>{tx.exploreHistoryDescEm}</em>{tx.exploreHistoryDescEnd}
           </p>
 
           <div className="history-with-mockups">
             <div className="history-timeline">
               <div className="history-era">
-                <p className="history-era-num">01</p>
-                <h3>The First Empires</h3>
-                <p className="history-era-dates">550 BCE — 651 CE</p>
-                <p>Cyrus the Great founds the Achaemenid Empire. Darius builds Persepolis. Alexander conquers and Persia rises again under the Sasanians — a thousand years of empire.</p>
+                <p className="history-era-num">{isFa ? "۰۱" : "01"}</p>
+                <h3>{tx.historyEra1Title}</h3>
+                <p className="history-era-dates">{tx.historyEra1Dates}</p>
+                <p>{tx.historyEra1Desc}</p>
               </div>
               <div className="history-era">
-                <p className="history-era-num">02</p>
-                <h3>Silence and Return</h3>
-                <p className="history-era-dates">651 — 1501</p>
-                <p>The Arab conquest transforms Iran. But Persian language and identity survive — through poetry, scholarship, and the slow, quiet work of cultural resistance.</p>
+                <p className="history-era-num">{isFa ? "۰۲" : "02"}</p>
+                <h3>{tx.historyEra2Title}</h3>
+                <p className="history-era-dates">{tx.historyEra2Dates}</p>
+                <p>{tx.historyEra2Desc}</p>
               </div>
               <div className="history-era">
-                <p className="history-era-num">03</p>
-                <h3>A Country Reforged</h3>
-                <p className="history-era-dates">1501 — 1789</p>
-                <p>The Safavids reunify Iran and establish Shia Islam as the state religion. Isfahan becomes one of the most beautiful cities in the world.</p>
+                <p className="history-era-num">{isFa ? "۰۳" : "03"}</p>
+                <h3>{tx.historyEra3Title}</h3>
+                <p className="history-era-dates">{tx.historyEra3Dates}</p>
+                <p>{tx.historyEra3Desc}</p>
               </div>
               <div className="history-era">
-                <p className="history-era-num">04</p>
-                <h3>The Modern Age</h3>
-                <p className="history-era-dates">1789 — today</p>
-                <p>Constitutional revolution, the Pahlavi dynasty, the 1979 revolution, and the Iran that exists now — a country still being written.</p>
+                <p className="history-era-num">{isFa ? "۰۴" : "04"}</p>
+                <h3>{tx.historyEra4Title}</h3>
+                <p className="history-era-dates">{tx.historyEra4Dates}</p>
+                <p>{tx.historyEra4Desc}</p>
               </div>
 
               <div className="history-more">
@@ -92,32 +83,31 @@ export default async function ExplorePage({
       {/* ── LITERATURE ── */}
       <section id="literature" className="explore-section" style={{ background: "linear-gradient(180deg, #FDF5F3 0%, #FDFDFC 100%)" }}>
         <div className="explore-section-inner">
-          <p className="explore-section-label">Literature</p>
+          <p className="explore-section-label">{tx.catLiterature}</p>
           <p className="explore-section-persian">ادبیات</p>
           <h2 className="explore-section-title">{tx.exploreLitTitle}</h2>
           <p className="explore-section-desc">
-            The poets who defined Persian — and whose words are still quoted at dinner tables,
-            weddings, and farewells across the Iranian world.
+            {tx.exploreLitDesc}
           </p>
 
           <div className="lit-poets">
             <div className="lit-poet-card poet-ferdowsi">
               <p className="poet-persian">فردوسی</p>
-              <h3>Ferdowsi</h3>
-              <p className="poet-title">The Keeper of the Language</p>
-              <p className="poet-dates">940 — 1020</p>
+              <h3>{isFa ? "فردوسی" : "Ferdowsi"}</h3>
+              <p className="poet-title">{tx.poetFerdowsiTitle}</p>
+              <p className="poet-dates">{isFa ? "۹۴۰ — ۱۰۲۰" : "940 — 1020"}</p>
             </div>
             <div className="lit-poet-card poet-saadi">
               <p className="poet-persian">سعدی</p>
-              <h3>Saadi</h3>
-              <p className="poet-title">The Voice of Wisdom</p>
-              <p className="poet-dates">c. 1210 — 1291</p>
+              <h3>{isFa ? "سعدی" : "Saadi"}</h3>
+              <p className="poet-title">{tx.poetSaadiTitle}</p>
+              <p className="poet-dates">{isFa ? "حدود ۱۲۱۰ — ۱۲۹۱" : "c. 1210 — 1291"}</p>
             </div>
             <div className="lit-poet-card poet-hafez">
               <p className="poet-persian">حافظ</p>
-              <h3>Hafez</h3>
-              <p className="poet-title">The Tongue of the Unseen</p>
-              <p className="poet-dates">c. 1315 — 1390</p>
+              <h3>{isFa ? "حافظ" : "Hafez"}</h3>
+              <p className="poet-title">{tx.poetHafezTitle}</p>
+              <p className="poet-dates">{isFa ? "حدود ۱۳۱۵ — ۱۳۹۰" : "c. 1315 — 1390"}</p>
             </div>
           </div>
 
@@ -131,33 +121,31 @@ export default async function ExplorePage({
       <section id="culture" className="culture-section">
         <div className="tile-pattern" />
         <div className="explore-section-inner" style={{ position: "relative", zIndex: 1 }}>
-          <p className="explore-section-label">Culture</p>
+          <p className="explore-section-label">{tx.catCulture}</p>
           <p className="explore-section-persian">فرهنگ</p>
           <h2 className="explore-section-title">{tx.exploreCultureTitle}</h2>
           <p className="explore-section-desc">
-            Nobody sits you down and explains any of this. You are supposed to absorb it, and
-            if you did not grow up inside it, you spend your life half a beat behind.
-            <em> Here it is, written down.</em>
+            {tx.exploreCultureDesc}{" "}<em>{tx.exploreCultureDescEm}</em>
           </p>
 
           <div className="culture-cards">
             <div className="culture-card">
-              <p className="culture-card-label">The rule nobody explains</p>
-              <h3>Taarof</h3>
+              <p className="culture-card-label">{tx.cultureTaarofLabel}</p>
+              <h3>{isFa ? "تعارف" : "Taarof"}</h3>
               <p className="culture-fa">تعارف</p>
-              <p>Offering what you will not give. Refusing what you want. The most confusing thing about Iranians, to everyone including Iranians.</p>
+              <p>{tx.cultureTaarofDesc}</p>
             </div>
             <div className="culture-card">
-              <p className="culture-card-label">Nobody eats alone</p>
-              <h3>The Table</h3>
+              <p className="culture-card-label">{tx.cultureTableLabel}</p>
+              <h3>{isFa ? "سفره" : "The Table"}</h3>
               <p className="culture-fa">سفره</p>
-              <p>An Iranian table is never set for one. Get to know what Iranians put on the table — and why there is always more food than anyone could finish.</p>
+              <p>{tx.cultureTableDesc}</p>
             </div>
             <div className="culture-card">
-              <p className="culture-card-label">You all know one</p>
-              <h3>Typical Persian</h3>
+              <p className="culture-card-label">{tx.cultureTypicalLabel}</p>
+              <h3>{isFa ? "ایرانی تیپیکال" : "Typical Persian"}</h3>
               <p className="culture-fa">ایرانی‌ها</p>
-              <p>You all know a Persian like this. We are standard in our ways — and once you see it, you cannot unsee it. A guide to recognising your own people.</p>
+              <p>{tx.cultureTypicalDesc}</p>
             </div>
           </div>
         </div>
@@ -166,12 +154,11 @@ export default async function ExplorePage({
       {/* ── GEOGRAPHY ── */}
       <section id="geography" className="explore-section" style={{ background: "linear-gradient(180deg, #FDFDFC 0%, #FDF5F3 100%)" }}>
         <div className="explore-section-inner">
-          <p className="explore-section-label">Geography</p>
+          <p className="explore-section-label">{tx.catGeography}</p>
           <p className="explore-section-persian">جغرافیا</p>
           <h2 className="explore-section-title">{tx.exploreGeoTitle}</h2>
           <p className="explore-section-desc">
-            Mountains, deserts, forests, coastlines — Iran is not one landscape. Explore
-            its provinces, cities, and the geography that shaped its history.
+            {tx.exploreGeoDesc}
           </p>
 
           <div className="geo-placeholder" style={{padding:"0",overflow:"hidden"}}>
@@ -185,9 +172,7 @@ export default async function ExplorePage({
         <div className="explore-share-inner">
           <h2>{tx.exploreShareTitle}</h2>
           <p>
-            Everything you discover in Zand can be saved to your collection, shared with
-            friends, or sent directly inside the app — and when they open it,
-            they learn the same thing you did.
+            {tx.exploreShareDesc}
           </p>
 
           <div className="share-features">
@@ -218,7 +203,7 @@ export default async function ExplorePage({
       {/* CTA */}
       <section className="explore-cta">
         <h2>{tx.exploreCtaTitle}</h2>
-        <p>Download Zand and dive into the story of Iran.</p>
+        <p>{tx.exploreCtaDesc}</p>
         <a href={"/" + lang + "/app"} className="explore-cta-btn">{tx.downloadApp}</a>
       </section>
     </>
