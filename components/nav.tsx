@@ -89,13 +89,16 @@ export function Nav({ lang }: { lang: Locale }) {
             style={{
               position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
               background: "rgba(23,23,23,0.12)", zIndex: 9998,
+              animation: "menuOverlayIn 0.3s ease both",
             }}
           />
           <div style={{
             position: "fixed", top: 0, left: 0, right: 0,
-            background: "#FAF8F5", zIndex: 9999,
+            background: "rgba(250,248,245,0.88)", zIndex: 9999,
             borderRadius: "0 0 16px 16px",
             boxShadow: "0 12px 40px rgba(23,23,23,0.1)",
+            backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
+            animation: "menuSlideDown 0.3s ease both",
           }}>
             <div style={{
               display: "flex", justifyContent: "space-between", alignItems: "center",
@@ -111,7 +114,7 @@ export function Nav({ lang }: { lang: Locale }) {
               }}>{String.fromCharCode(215)}</button>
             </div>
             <div style={{ padding: "0.5rem 2rem 2rem" }}>
-              {links.map(({ href, label }) => (
+              {links.map(({ href, label }, i) => (
                 <Link
                   key={href}
                   href={"/" + lang + "/" + href}
@@ -121,6 +124,9 @@ export function Nav({ lang }: { lang: Locale }) {
                     fontSize: "1.2rem", fontWeight: 300, color: "#171717",
                     textDecoration: "none",
                     borderBottom: "1px solid rgba(23,23,23,0.05)",
+                    opacity: 0,
+                    animation: "menuItemIn 0.35s ease forwards",
+                    animationDelay: (0.08 + i * 0.06) + "s",
                   }}
                 >
                   {label[lang]}
@@ -137,6 +143,18 @@ export function Nav({ lang }: { lang: Locale }) {
         }
         @media (max-width: 768px) {
           .zand-nav-desktop { display: none !important; }
+        }
+        @keyframes menuSlideDown {
+          from { opacity: 0; transform: translateY(-12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes menuItemIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes menuOverlayIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
       `}</style>
     </div>

@@ -148,7 +148,7 @@
 
 .lit-poet-card::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(23,23,23,0.7) 100%);
+  background: linear-gradient(180deg, rgba(23,23,23,0.1) 0%, rgba(23,23,23,0.45) 50%, rgba(23,23,23,0.8) 100%);
   z-index: 1;
 }
 
