@@ -57,11 +57,11 @@ export default async function HomePage({
             Our Story
           </Link>
         </div>
-        <p className="home-scroll-hint">{lang === "fa" ? t.fa.scrollToExplore : "Scroll to explore ↓"}</p>
+
       </section>
 
       {/* Language */}
-      <section className="home-section" style={{ background: "linear-gradient(180deg, #F9F0F0 0%, #FDFDFC 50%, #FDF5F3 100%)" }}>
+      <section className="home-section" style={{ background: "transparent" }}>
         <div className="home-section-inner">
           <p className="home-section-label">{lang === "fa" ? t.fa.homeLearnLabel : "Learn Persian"}</p>
           <h2 className="home-section-title scroll-reveal">
@@ -88,7 +88,7 @@ export default async function HomePage({
             </div>
           </div>
 
-          <div className="home-mockup-scroll" style={{ marginTop: "3rem" }}>
+          <div className="home-mockup-scroll home-mockup-scroll-center" style={{ marginTop: "3rem" }}>
             <div className="phone-frame phone-frame-sm phone-frame-tilt-left phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/home-lang.png" alt="Learn Persian" /></div>
             <div className="phone-frame phone-frame-sm phone-shadow-deep"><div className="phone-frame-notch" /><img src="/mockups/lang-flipcard-single.jpg" alt="Flip cards" /></div>
             <div className="phone-frame phone-frame-sm phone-frame-tilt-right phone-shadow"><div className="phone-frame-notch" /><img src="/mockups/lang-translate.jpg" alt="AI Translation" /></div>
