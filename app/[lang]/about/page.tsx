@@ -152,7 +152,7 @@ export default async function AboutPage({
           <blockquote>
             {isFa
             ? "«می‌دانیم چه حسیست که به بخشی از خودت کنجکاو باشی و ندانی از کجا شروع کنی. برای همین خواستیم جایی را بسازیم که آرزو داشتم وقتی بزرگ می‌شدم داشتم.»"
-            : "\u201CWe know what it\u2019s like to feel curious about a part of yourself and not quite know where to begin. So We wanted to build the place we wish we had growing up.\u201D"
+            : "\u201CWe know what it\u2019s like to feel curious about a part of yourself and not quite know where to begin. So we wanted to build the place we wish we had growing up.\u201D"
             }
           </blockquote>
           <p className="about-attr">The Zand Team</p>
