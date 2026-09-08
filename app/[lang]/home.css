@@ -700,3 +700,20 @@ main {
 .home-tpm-article-img {
   display: none !important;
 }
+
+/* Smooth fade at bottom of Language section on mobile */
+@media (max-width: 768px) {
+  .home-section:first-of-type {
+    padding-bottom: 2rem;
+  }
+  .home-section:first-of-type::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #F7F5F3);
+    pointer-events: none;
+  }
+}
