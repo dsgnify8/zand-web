@@ -51,7 +51,7 @@ export default async function HomePage({
           {lang === "fa" ? t.fa.homeDesc : "Learn Persian. Explore Iranian history and culture. Discover Iranian-owned businesses"}{" "}<em>{lang === "fa" ? t.fa.homeDescEm : "anywhere in the world"}</em>{lang === "fa" ? t.fa.homeDescEnd || "" : "."}
         </p>
         <div className="home-cta-group">
-          <a href="#" className="home-cta-primary">
+          <a href={"/" + lang + "/app"} className="home-cta-primary">
             Download the App
           </a>
           <Link href="/en/about" className="home-cta-secondary">
@@ -211,7 +211,7 @@ export default async function HomePage({
           growing your business, or simply curious — Zand is where it starts.
         </p>
         <div className="home-cta-group">
-          <a href="#" className="home-cta-primary">
+          <a href={"/" + lang + "/app"} className="home-cta-primary">
             Download on the App Store
           </a>
         </div>

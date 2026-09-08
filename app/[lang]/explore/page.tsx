@@ -219,7 +219,7 @@ export default async function ExplorePage({
       <section className="explore-cta">
         <h2>{tx.exploreCtaTitle}</h2>
         <p>Download Zand and dive into the story of Iran.</p>
-        <a href="#" className="explore-cta-btn">{tx.downloadApp}</a>
+        <a href={"/" + lang + "/app"} className="explore-cta-btn">{tx.downloadApp}</a>
       </section>
     </>
   );

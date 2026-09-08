@@ -158,7 +158,7 @@ export default async function BusinessPage({
 
       <div className="biz-app-band">
         <p>See hours, read founder stories, save to your collection, and get directions in the ZAND app.</p>
-        <a href="#">{lang === "fa" ? "باز کردن در اپلیکیشن" : "Open in App"}</a>
+        <a href={"/" + lang + "/app"}>{lang === "fa" ? "باز کردن در اپلیکیشن" : "Open in App"}</a>
       </div>
     </>
   );

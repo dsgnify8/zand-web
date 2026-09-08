@@ -20,7 +20,7 @@ export default async function LanguagePage({
           Not a translation of Duolingo. Zand teaches Persian the way it is actually
           spoken and read \u2014 built from the ground up for the language, not adapted from another one.
         </p>
-        <a href="#" className="lang-hero-cta">{tx.langHeroCta}</a>
+        <a href={"/" + lang + "/app"} className="lang-hero-cta">{tx.langHeroCta}</a>
       </section>
 
       {/* Journey */}
@@ -126,7 +126,7 @@ export default async function LanguagePage({
       <section className="lang-cta-band">
         <h2>{tx.langCtaTitle}</h2>
         <p>Download Zand and begin your first lesson today.</p>
-        <a href="#" className="lang-hero-cta">{tx.downloadApp}</a>
+        <a href={"/" + lang + "/app"} className="lang-hero-cta">{tx.downloadApp}</a>
       </section>
     </>
   );

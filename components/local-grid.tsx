@@ -228,7 +228,7 @@ export function LocalGrid({
         <p>{lang === "fa"
           ? "\u0647\u0645\u0647\u0654 \u06A9\u0633\u0628\u200C\u0648\u06A9\u0627\u0631\u0647\u0627 \u0648 \u062F\u0627\u0633\u062A\u0627\u0646\u200C\u0647\u0627\u06CC\u0634\u0627\u0646 \u0631\u0627 \u062F\u0631 \u0627\u067E\u0644\u06CC\u06A9\u06CC\u0634\u0646 \u06A9\u0627\u0648\u0634 \u06A9\u0646\u06CC\u062F"
           : "Explore all businesses and their stories on the app"}</p>
-        <a href="#">
+        <a href={"/" + lang + "/app"}>
           {lang === "fa" ? "\u062F\u0627\u0646\u0644\u0648\u062F \u0627\u067E\u0644\u06CC\u06A9\u06CC\u0634\u0646" : "Download the App"}
         </a>
       </div>
