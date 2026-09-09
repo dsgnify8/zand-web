@@ -64,7 +64,9 @@ export default async function BusinessPage({
   }
 
   const photoKeys: string[] = Array.isArray(biz.photos) ? biz.photos : [];
-  const photoUrl = photoKeys.length > 0 ? businessPhotoUrl(photoKeys[0]) : null;
+  const photoUrls = photoKeys
+    .map((k) => businessPhotoUrl(k))
+    .filter((u): u is string => u !== null);
 
   const category = biz.category
     ? biz.category.charAt(0).toUpperCase() + biz.category.slice(1)
@@ -72,9 +74,13 @@ export default async function BusinessPage({
 
   return (
     <>
-      <div className="biz-hero">
-        {photoUrl ? (
-          <img src={photoUrl} alt={biz.name} />
+      <div className={photoUrls.length > 1 ? "biz-gallery" : "biz-hero"}>
+        {photoUrls.length > 0 ? (
+          photoUrls.map((url, i) => (
+            <div key={i} className={photoUrls.length > 1 ? "biz-gallery-item" : undefined}>
+              <img src={url} alt={biz.name + (photoUrls.length > 1 ? ` — photo ${i + 1}` : "")} />
+            </div>
+          ))
         ) : (
           <span>Photo coming soon</span>
         )}
