@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import "./detail.css";
 
-export const revalidate = 300;
+export const revalidate = 60;
 
 function slugify(name: string, city: string): string {
   return (name + "-" + city)

@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { supabase, businessPhotoUrl } from "@/lib/supabase";
 import { LocalGrid } from "@/components/local-grid";
 import type { Metadata } from "next";
 import "./local.css";
@@ -45,7 +45,7 @@ export async function generateMetadata({
   };
 }
 
-export const revalidate = 300;
+export const revalidate = 60;
 
 export default async function LocalPage({
   params,
@@ -60,7 +60,11 @@ export default async function LocalPage({
     .eq("status", "active")
     .order("name");
 
-  const listings = businesses || [];
+  const listings = (businesses || []).map((biz) => {
+    const photoKeys: string[] = Array.isArray(biz.photos) ? biz.photos : [];
+    const coverUrl = photoKeys.length > 0 ? businessPhotoUrl(photoKeys[0]) : null;
+    return { ...biz, coverUrl };
+  });
 
   return (
     <>

@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { businessPhotoUrl } from "@/lib/supabase";
 
 type Business = {
   id: string;
@@ -15,6 +14,7 @@ type Business = {
   country: string | null;
   photos: string[] | null;
   keywords: string[] | null;
+  coverUrl: string | null;
 };
 
 function slugify(name: string, city: string): string {
@@ -182,15 +182,13 @@ export function LocalGrid({
         ) : (
           <div className="local-grid">
             {filtered.map((biz) => {
-              const photoKeys: string[] = Array.isArray(biz.photos) ? biz.photos : [];
-              const photoUrl = photoKeys.length > 0 ? businessPhotoUrl(photoKeys[0]) : null;
               const slug = slugify(biz.name, biz.city || "");
 
               return (
                 <Link key={biz.id} href={"/" + lang + "/local/" + slug} className="local-card">
                   <div className="local-card-img">
-                    {photoUrl ? (
-                      <img src={photoUrl} alt={biz.name} />
+                    {biz.coverUrl ? (
+                      <img src={biz.coverUrl} alt={biz.name} decoding="async" />
                     ) : (
                       <span>{lang === "fa" ? "\u0639\u06A9\u0633 \u0628\u0647 \u0632\u0648\u062F\u06CC" : "Photo coming soon"}</span>
                     )}
