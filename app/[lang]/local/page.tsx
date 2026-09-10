@@ -1,6 +1,49 @@
 import { supabase } from "@/lib/supabase";
 import { LocalGrid } from "@/components/local-grid";
+import type { Metadata } from "next";
 import "./local.css";
+
+const SITE = "https://zandapplication.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const isFa = lang === "fa";
+
+  const title = isFa
+    ? "کسب\u200Cوکارهای ایرانی | ZAND"
+    : "Iranian-Owned Businesses Worldwide | ZAND Local";
+  const desc = isFa
+    ? "رستوران\u200Cها، فروشگاه\u200Cها و خدماتی که ایرانی\u200Cها اداره می\u200Cکنند \u2014 از لندن تا دبی تا نیویورک."
+    : "Restaurants, shops, and services run by Iranians \u2014 from London to Dubai to New York. Find and support your community on ZAND.";
+
+  return {
+    title,
+    description: desc,
+    alternates: {
+      canonical: SITE + "/" + lang + "/local",
+      languages: { en: SITE + "/en/local", fa: SITE + "/fa/local" },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: SITE + "/" + lang + "/local",
+      siteName: "ZAND",
+      type: "website",
+      locale: isFa ? "fa_IR" : "en_US",
+      images: [{ url: SITE + "/og-default.jpg", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: desc,
+      images: [SITE + "/og-default.jpg"],
+    },
+  };
+}
 
 export const revalidate = 300;
 

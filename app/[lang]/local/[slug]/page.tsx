@@ -12,15 +12,26 @@ function slugify(name: string, city: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
+const SITE = "https://zandapplication.com";
+const DEFAULT_OG = SITE + "/og-default.jpg";
+
+function truncate(text: string | null, max: number): string {
+  if (!text) return "";
+  if (text.length <= max) return text;
+  return text.slice(0, text.lastIndexOf(" ", max)) + "\u2026";
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ lang: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { lang, slug } = await params;
+  const isFa = lang === "fa";
+
   const { data: businesses } = await supabase
     .from("businesses")
-    .select("name, tagline, city, country, category")
+    .select("name, name_fa, tagline, tagline_fa, description, description_fa, city, country, category, photos")
     .eq("status", "active");
 
   const biz = (businesses || []).find(
@@ -29,9 +40,46 @@ export async function generateMetadata({
 
   if (!biz) return { title: "Business \u2014 ZAND" };
 
+  const name = isFa && biz.name_fa ? biz.name_fa : biz.name;
+  const title = name + " \u2014 " + biz.city + " | ZAND Local";
+
+  const descSource = isFa && biz.description_fa
+    ? biz.description_fa
+    : biz.description || biz.tagline || "";
+  const desc = truncate(descSource, 160)
+    || name + " \u2014 " + (biz.category || "Business") + " in " + biz.city + ", " + (biz.country || "") + ". Discover Iranian-owned businesses on ZAND.";
+
+  const photoKeys: string[] = Array.isArray(biz.photos) ? biz.photos : [];
+  const coverPhoto = photoKeys.length > 0 ? businessPhotoUrl(photoKeys[0]) : null;
+  const ogImage = coverPhoto || DEFAULT_OG;
+
+  const url = SITE + "/" + lang + "/local/" + slug;
+
   return {
-    title: biz.name + " \u2014 " + biz.city + " | ZAND Local",
-    description: biz.tagline || biz.name + " \u2014 " + biz.category + " in " + biz.city + ", " + biz.country + ". Find Iranian-owned businesses on ZAND.",
+    title,
+    description: desc,
+    alternates: {
+      canonical: url,
+      languages: {
+        en: SITE + "/en/local/" + slug,
+        fa: SITE + "/fa/local/" + slug,
+      },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url,
+      siteName: "ZAND",
+      type: "website",
+      locale: isFa ? "fa_IR" : "en_US",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: desc,
+      images: [ogImage],
+    },
   };
 }
 
@@ -72,8 +120,33 @@ export default async function BusinessPage({
     ? biz.category.charAt(0).toUpperCase() + biz.category.slice(1)
     : "";
 
+  // Structured data for Google rich results
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: biz.name,
+    ...(biz.name_fa && { alternateName: biz.name_fa }),
+    description: biz.description || biz.tagline || "",
+    ...(photoUrls.length > 0 && { image: photoUrls }),
+    ...(biz.address && {
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: biz.address,
+        addressLocality: biz.city || "",
+        addressCountry: biz.country || "",
+      },
+    }),
+    ...(biz.phone && { telephone: biz.phone }),
+    ...(biz.website && { url: biz.website }),
+    ...(biz.category && { "@type": biz.category === "restaurant" ? "Restaurant" : "LocalBusiness" }),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className={photoUrls.length > 1 ? "biz-gallery" : "biz-hero"}>
         {photoUrls.length > 0 ? (
           photoUrls.map((url, i) => (
