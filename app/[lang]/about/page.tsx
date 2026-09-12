@@ -44,8 +44,8 @@ export default async function AboutPage({
           </p>
           <p>
             {isFa
-            ? <>یک دوست نزدیک که تاریخ ایران را خوب می‌شناخت معلمی اتفاقی شد. یک سؤال ساده به ساعت‌ها گفت‌و‌گو تبدیل می‌شد — یک رویداد تاریخی، یک تحول فرهنگی، شخصیتی که هرگز اسمش را نشنیده بود. هر بار با این فکر بیرون می‌آمد که <strong>چقدر چیزهایی بود که هرگز یادش نداده بودند</strong>. و شروع کرد به فکر کردن که چند ایرانی دیگر همین حس را دارند.</>
-            : <>When you would speak to certain people who were more well informed, a simple question would turn into hours of conversation — a historical event, a cultural shift, a person you&apos;d never heard of. This made us realise{" "}<strong>how much we hadn&apos;t been taught</strong> about our own country. And we started to wonder how many other Iranians felt the same way.</>
+            ? <>وقتی دربارهٔ یک رویداد تاریخی یا یک تحول فرهنگی حرف می‌زنی، می‌فهمی چقدر هست که یاد بگیری. و هر چه بیشتر یاد گرفتیم، بیشتر دیدیم <strong>چقدر چیزهایی بود که هرگز یادمان نداده بودند</strong> دربارٔ کشور خودمان. شروع کردیم به فکر کردن که چند ایرانی دیگر همین حس را دارند.</>
+            : <>When you have conversations about a historical event or a cultural shift, you realise how much there is to learn. And the more we learnt, the more we saw{" "}<strong>how much we hadn&apos;t been taught</strong> about our own country. We started to wonder how many other Iranians felt the same way.</>
             }
           </p>
 
