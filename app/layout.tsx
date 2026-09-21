@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ZAND — Rooted Living",
+  title: "Zand - Learn, Explore, Connect",
   description:
     "Learn Persian, explore Iranian history and culture, and discover Iranian-owned businesses worldwide.",
 };
