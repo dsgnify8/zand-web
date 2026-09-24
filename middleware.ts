@@ -22,6 +22,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Match all paths except Next.js internals and static files
-    "/((?!_next|api|favicon.ico|mockups|.*\\..*).*)",
+    "/((?!_next|api|add|folder|\\.well-known|favicon.ico|mockups|.*\\..*).*)",
   ],
 };
