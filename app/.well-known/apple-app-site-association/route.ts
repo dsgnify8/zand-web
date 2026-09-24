@@ -5,12 +5,10 @@
 // https, as application/json, with no redirect and no extension. A route
 // handler is the only way to satisfy all four in Next.
 //
-// APPLE_TEAM_ID is the ten-character Team ID from the Apple Developer
-// membership page. Without it the file is still valid JSON, but iOS will
-// not match it and links fall back to this site.
-
-// Either spelling, so it does not matter which one was set in Vercel.
-const TEAM = process.env.APPLE_TEAM_ID ?? process.env.NEXT_PUBLIC_APPLE_TEAM_ID ?? "";
+// The Team ID is written in rather than read from the environment. It
+// is published in this very file, so it is not a secret, and a build
+// that cannot see a variable silently serves a file iOS ignores.
+const TEAM = "J888GRM9SW";
 const BUNDLE = "com.zandapplication.zand";
 
 export const dynamic = "force-static";
