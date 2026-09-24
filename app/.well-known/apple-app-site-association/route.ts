@@ -22,7 +22,13 @@ export function GET() {
       details: [
         {
           appID: `${TEAM}.${BUNDLE}`,
-          paths: ["/add", "/add/*", "/folder", "/folder/*"],
+          // A listing's own page opens in the app; the directory index
+          // and everything else stays on the web.
+          paths: [
+            "/add", "/add/*",
+            "/folder", "/folder/*",
+            "/en/local/*", "/fa/local/*",
+          ],
         },
       ],
     },
