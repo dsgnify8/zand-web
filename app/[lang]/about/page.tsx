@@ -91,14 +91,14 @@ export default async function AboutPage({
           <h2 className="about-section-heading">{isFa ? "زند چیست" : "What Zand is"}</h2>
           <p>
             {isFa
-            ? <>زند جاییست که ایرانی بودن می‌تواند هر معنایی برایت داشته باشد. فارسی را به روشی یاد بگیری که <em>واقعاً جواب می‌دهد</em> — تاریخ ایران را از منابع اصلی بخوانی، نه خلاصه. فرهنگی را کشف کنی که فراتر از اخبار است.</>
-            : <>Zand is a place where being Iranian can mean whatever it means to you. You can learn Persian in a way that <em>actually works</em> — not a translation of a Western language app, but something built for how Farsi is actually spoken and read. You can explore Iranian history through original sources, not summaries. You can discover the culture beyond what makes the news.</>
+            ? <>زند جاییست که ایرانی بودن می‌تواند هر معنایی برایت داشته باشد. فارسی را به روشی یاد بگیری که <em>واقعاً جواب می‌دهد</em> — تاریخ ایران را از منابع اصلی بخوانی، نه خلاصه. فرهنگی را کشف کنی که فراتر از اخبار است. فرهنگ همیشه آنجاست، در همه‌چیز بافته شده، اما هرگز حس درس نمی‌دهد. از روی کنجکاوی برش می‌داری و وقتی زمین می‌گذاری، بدون اینکه بفهمی چیزی دربارهٔ ایران یاد گرفته‌ای.</>
+            : <>Zand is a place where being Iranian can mean whatever it means to you. You can learn Persian in a way that <em>actually works</em> — not a translation of a Western language app, but something built for how Farsi is actually spoken and read. You can explore Iranian history through original sources, not summaries. You can discover the culture beyond what makes the news. The culture is always there, woven through everything, but it never feels like a lesson. You pick it up from curiosity and put it down having learned something about Iran without realising it.</>
             }
           </p>
           <p>
             {isFa
-            ? <>یک پروژهٔ سیاسی نیست. به کسی نمی‌گوید دربارهٔ ایران چه فکر کند. ابزاری می‌دهد برای <strong>فکر کردن، پرسیدن و یاد گرفتن</strong> — و ساختن رابطهٔ خودت با آن.</>
-            : <>It&apos;s not a political project. It doesn&apos;t tell anyone what to think about Iran. It gives people the tools to <strong>think, question, and learn</strong> — and to form their own relationship with it.</>
+            ? <>یک پروژهٔ سیاسی نیست. به کسی نمی‌گوید دربارهٔ ایران چه فکر کند. ابزاری می‌دهد برای <strong>فکر کردن، پرسیدن و یاد گرفتن</strong> — و ساختن رابطهٔ خودت با آن. تو ریشه داری جایی که شاید هرگز در آن زندگی نکرده‌ای. زندگی می‌کنی جایی که ریشه‌ات نیست. زند هر دو را نگه می‌دارد.</>
+            : <>It&apos;s not a political project. It doesn&apos;t tell anyone what to think about Iran. It gives people the tools to <strong>think, question, and learn</strong> — and to form their own relationship with it. You are rooted somewhere you may have never lived. You are living somewhere that is not your root. Zand holds both.</>
             }
           </p>
         </article>
