@@ -1,3 +1,37 @@
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const title = "Zand - Learn, Explore, Connect";
+  const description = "Learn Persian, explore Iranian history and culture, and discover Iranian-owned businesses worldwide.";
+  const url = "https://zandapplication.com";
+  const ogImage = "https://zandapplication.com/og-default.jpg";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Zand",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: "Zand - Learn, Explore, Connect" }],
+      locale: lang === "fa" ? "fa_IR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+    alternates: {
+      canonical: url,
+      languages: { en: url + "/en", fa: url + "/fa" },
+    },
+  };
+}
+
 import Link from "next/link";
 import { supabase, businessPhotoUrl } from "@/lib/supabase";
 import { t } from "@/lib/translations";
