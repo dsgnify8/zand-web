@@ -22,13 +22,21 @@ export function GET() {
       details: [
         {
           appID: `${TEAM}.${BUNDLE}`,
-          // A listing's own page opens in the app; the directory index
-          // and everything else stays on the web.
-          paths: [
-            "/add", "/add/*",
-            "/folder", "/folder/*",
-            "/en/local/*", "/fa/local/*",
-          ],
+          // Empty, deliberately, and temporarily.
+          //
+          // These paths used to be here: "/add", "/add/*", "/folder",
+          // "/folder/*", "/en/local/*", "/fa/local/*". iOS honoured them
+          // and opened the app — but version 1.1.0 has no screen behind
+          // any of those URLs, so every invitation anyone sent opened ZAND
+          // to a black screen and stopped there.
+          //
+          // With nothing listed, iOS stops intercepting and the links open
+          // these pages instead, which work and offer the App Store.
+          //
+          // Put the list back once 1.2.0 is live, not before: that is the
+          // version that has the screens. See also OpenInApp, which had to
+          // stop reaching for the zand:// scheme for the same reason.
+          paths: [],
         },
       ],
     },

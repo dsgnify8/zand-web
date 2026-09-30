@@ -1,25 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 const APP_STORE = "https://apps.apple.com/app/id6807573204";
 
 /**
- * The fallback path.
+ * The way into the app.
  *
- * With universal links set up, iOS opens the app before this page ever
- * renders. So anyone who sees it either does not have the app or is not
- * on an iPhone: try the custom scheme once in case the association has
- * not propagated, then send them to the App Store.
+ * This used to reach for the zand:// scheme after a moment, on the theory
+ * that somebody with the app should not have to visit the App Store. That
+ * theory was sound and the practice was not: version 1.1.0 has no screen
+ * behind zand://add or zand://folder, so the redirect opened ZAND to a
+ * black screen. Worse, it fired on its own, so nobody had to press
+ * anything to get there.
+ *
+ * So for now there is one button and it goes to the App Store, which shows
+ * OPEN to anyone who already has the app. Once 1.2.0 is live the scheme
+ * handoff can come back, along with the paths in the association file.
+ *
+ * `deepLink` is still taken, and still unused, so that restoring it is a
+ * matter of putting the effect back rather than rethreading two pages.
  */
 export function OpenInApp({ deepLink }: { deepLink: string }) {
-  const [stuck, setStuck] = useState(false);
-
-  useEffect(() => {
-    const t1 = setTimeout(() => { window.location.href = deepLink; }, 200);
-    const t2 = setTimeout(() => setStuck(true), 1800);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, [deepLink]);
+  void deepLink;
 
   return (
     <a
@@ -38,7 +39,7 @@ export function OpenInApp({ deepLink }: { deepLink: string }) {
         boxShadow: "0 6px 20px rgba(140,58,46,0.28)",
       }}
     >
-      {stuck ? "Get ZAND on the App Store" : "Open ZAND"}
+      Get ZAND on the App Store
     </a>
   );
 }
