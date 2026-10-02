@@ -10,10 +10,19 @@ import { Handoff } from "@/components/handoff";
 export default async function AddPage({
   searchParams,
 }: {
-  searchParams: Promise<{ from?: string }>;
+  searchParams: Promise<{ i?: string; from?: string }>;
 }) {
-  const { from } = await searchParams;
-  const deepLink = `zand://add${from ? `?from=${encodeURIComponent(from)}` : ""}`;
+  // `i` is a token and is what a current invitation carries; `from` is a
+  // user id and is what links already sitting in people's messages carry.
+  // Whichever arrived is passed straight through, because the app knows
+  // what to do with either and this page should not have an opinion.
+  const { i, from } = await searchParams;
+  const q = i
+    ? `?i=${encodeURIComponent(i)}`
+    : from
+      ? `?from=${encodeURIComponent(from)}`
+      : "";
+  const deepLink = `zand://add${q}`;
 
   return (
     <Handoff

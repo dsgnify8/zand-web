@@ -8,6 +8,28 @@
 // The Team ID is written in rather than read from the environment. It
 // is published in this very file, so it is not a secret, and a build
 // that cannot see a variable silently serves a file iOS ignores.
+/**
+ * Whether the released version of the app can handle these links.
+ *
+ * One association file serves every version, so listing a path opens the
+ * app for everybody — including anyone on an older version. Version 1.1.0
+ * had no screen behind /add, /folder or a listing URL, and an unmatched
+ * route in expo-router draws nothing, so for a day every invitation anyone
+ * sent opened ZAND to a black screen.
+ *
+ * Flip this to true when the version that HAS those screens is the one on
+ * the App Store, and not before. There is a floor under them now too
+ * (app/+not-found.tsx), so an unrecognised path goes home rather than
+ * nowhere, but that floor only exists in the new version.
+ */
+const APP_HANDLES_LINKS = false;
+
+const APP_PATHS = [
+  "/add", "/add/*",
+  "/folder", "/folder/*",
+  "/en/local/*", "/fa/local/*",
+];
+
 const TEAM = "J888GRM9SW";
 const BUNDLE = "com.zandapplication.zand";
 
@@ -22,21 +44,10 @@ export function GET() {
       details: [
         {
           appID: `${TEAM}.${BUNDLE}`,
-          // Empty, deliberately, and temporarily.
-          //
-          // These paths used to be here: "/add", "/add/*", "/folder",
-          // "/folder/*", "/en/local/*", "/fa/local/*". iOS honoured them
-          // and opened the app — but version 1.1.0 has no screen behind
-          // any of those URLs, so every invitation anyone sent opened ZAND
-          // to a black screen and stopped there.
-          //
-          // With nothing listed, iOS stops intercepting and the links open
-          // these pages instead, which work and offer the App Store.
-          //
-          // Put the list back once 1.2.0 is live, not before: that is the
-          // version that has the screens. See also OpenInApp, which had to
-          // stop reaching for the zand:// scheme for the same reason.
-          paths: [],
+          // See APP_HANDLES_LINKS above. Empty means iOS does not claim
+          // these URLs and they open the pages in this site instead, which
+          // work and offer the App Store.
+          paths: APP_HANDLES_LINKS ? APP_PATHS : [],
         },
       ],
     },
