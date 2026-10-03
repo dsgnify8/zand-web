@@ -73,6 +73,31 @@ export default async function HomePage({
 
   return (
     <>
+
+      {/* WebSite JSON-LD with sitelinks search */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Zand",
+            url: "https://zandapplication.com",
+            description: isFa
+              ? "فارسی یاد بگیرید، تاریخ ایران را کاوش کنید، کسب‌وکارهای ایرانی را کشف کنید"
+              : "Learn Farsi, explore Iranian history and culture, discover Iranian-owned businesses worldwide",
+            inLanguage: ["en", "fa"],
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://zandapplication.com/en/local?q={search_term_string}",
+              },
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
       <ScrollRevealInit />
       {/* Hero */}
       <section className="home-hero">

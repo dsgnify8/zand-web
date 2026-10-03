@@ -33,7 +33,7 @@ export async function generateMetadata({
       url: SITE + "/" + lang + "/local",
       siteName: "ZAND",
       type: "website",
-      locale: isFa ? "fa_IR" : "en_US",
+      locale: lang === "fa" ? "fa_IR" : "en_US",
       images: [{ url: SITE + "/og-default.jpg", width: 1200, height: 630 }],
     },
     twitter: {
@@ -84,6 +84,23 @@ export default async function LocalPage({
 
   return (
     <>
+
+      {/* Business directory JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: lang === "fa" ? "دایرکتوری کسب‌وکارهای ایرانی" : "Iranian Business Directory",
+            description: lang === "fa"
+              ? "کسب‌وکارهای ایرانی در سراسر جهان"
+              : "Discover Iranian-owned businesses worldwide. Restaurants, shops, services, and more.",
+            itemListOrder: "https://schema.org/ItemListUnordered",
+            numberOfItems: 52,
+          }),
+        }}
+      />
       <section className="local-hero">
         <h1>
           {lang === "en"

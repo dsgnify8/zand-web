@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       url,
       siteName: "Zand",
       images: [{ url: "https://zandapplication.com/og-default.jpg", width: 1200, height: 630 }],
-      locale: isFa ? "fa_IR" : "en_US",
+      locale: lang === "fa" ? "fa_IR" : "en_US",
       type: "website",
     },
     twitter: {
@@ -57,6 +57,29 @@ export default async function LanguagePage({
 
   return (
     <>
+
+      {/* Farsi course JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: lang === "fa" ? "یادگیری فارسی" : "Learn Farsi Online",
+            description: lang === "fa"
+              ? "فارسی را با زند یاد بگیرید"
+              : "Learn Farsi online with Zand. Master the Persian alphabet, vocabulary, and conversation.",
+            provider: {
+              "@type": "Organization",
+              name: "Zand",
+              url: "https://zandapplication.com",
+            },
+            inLanguage: "fa",
+            availableLanguage: ["en", "fa"],
+            isAccessibleForFree: true,
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="lang-hero">
         <p className="lang-hero-label">{tx.homeLearnLabel}</p>

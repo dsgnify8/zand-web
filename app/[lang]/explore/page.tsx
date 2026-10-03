@@ -57,6 +57,33 @@ export default async function ExplorePage({
 
   return (
     <>
+
+      {/* Educational content JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: isFa ? "کاوش در تاریخ ایران" : "Explore Iranian History and Culture",
+            description: isFa
+              ? "سه هزار سال تاریخ و فرهنگ ایران"
+              : "Explore 3,000 years of Iranian history, from Cyrus the Great to modern Iran",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Zand",
+              url: "https://zandapplication.com",
+            },
+            about: [
+              { "@type": "Thing", name: "Iranian history" },
+              { "@type": "Thing", name: "Persian Empire" },
+              { "@type": "Thing", name: "Persian culture" },
+              { "@type": "Thing", name: "Persian poetry" },
+              { "@type": "Thing", name: "Iranian civilization" },
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="explore-hero">
         <div className="tile-pattern" />
