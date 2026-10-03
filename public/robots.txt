@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zandapplication.com/sitemap.xml
+Sitemap: https://zandapplication.com/sitemap-businesses

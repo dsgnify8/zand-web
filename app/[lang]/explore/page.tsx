@@ -1,3 +1,48 @@
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const isFa = lang === "fa";
+
+  const title = isFa
+    ? "کاوش در تاریخ و فرهنگ ایران | زند"
+    : "Explore Iranian History and Culture | Zand";
+  const description = isFa
+    ? "سه هزار سال تاریخ ایران را کشف کنید. از کوروش کبیر تا ایران مدرن، شعر فارسی، فرهنگ و هنر."
+    : "Explore 3,000 years of Iranian history, from Cyrus the Great and the Persian Empire to modern Iran. Discover Persian poetry, culture, the Qajar dynasty, Safavid era, and more.";
+  const url = `https://zandapplication.com/${lang}/explore`;
+
+  return {
+    title,
+    description,
+    keywords: isFa
+      ? ["تاریخ ایران", "کوروش کبیر", "شعر فارسی", "حافظ", "سعدی", "فردوسی", "فرهنگ ایرانی", "سلسله قاجار", "ایران باستان"]
+      : ["Iranian history", "Persian Empire", "Cyrus the Great", "Persian poetry", "Hafez", "Saadi", "Ferdowsi", "Qajar dynasty", "Safavid Empire", "modern Iran", "Shah of Iran", "Iranian culture", "Persian civilization", "Achaemenid Empire", "Iranian art", "Persian literature"],
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Zand",
+      images: [{ url: "https://zandapplication.com/og-default.jpg", width: 1200, height: 630 }],
+      locale: isFa ? "fa_IR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://zandapplication.com/og-default.jpg"],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: "https://zandapplication.com/en/explore",
+        fa: "https://zandapplication.com/fa/explore",
+      },
+    },
+  };
+}
+
 import "./explore.css";
 import { t } from "@/lib/translations";
 
@@ -205,6 +250,14 @@ export default async function ExplorePage({
         <h2>{tx.exploreCtaTitle}</h2>
         <p>{tx.exploreCtaDesc}</p>
         <a href={"/" + lang + "/app"} className="explore-cta-btn">{tx.downloadApp}</a>
+      </section>
+      {/* SEO content */}
+      <section className="sr-only" aria-hidden="true">
+        <h2>{isFa ? "درباره تاریخ و فرهنگ ایران" : "About Iranian History and Culture"}</h2>
+        <p>{isFa
+          ? `تاریخ ایران بیش از سه هزار سال قدمت دارد. از امپراتوری هخامنشی که توسط کوروش کبیر بنیان‌گذاری شد، تا سلسله‌های اشکانی و ساسانی، عصر طلایی اسلام، امپراتوری صفوی، سلسله قاجار، دوران پهلوی و ایران مدرن. شعر فارسی شامل استادانی چون فردوسی نویسنده شاهنامه، حافظ شیرازی، سعدی، مولانا، عمر خیام و عطار است.`
+          : `Iranian history spans over 3,000 years. From the Achaemenid Empire founded by Cyrus the Great, through the Parthian and Sassanid dynasties, the Islamic Golden Age, the Safavid Empire, the Qajar dynasty, the Pahlavi era under the Shah of Iran, to modern-day Iran. Persian poetry includes masters like Ferdowsi who wrote the Shahnameh, Hafez of Shiraz, Saadi, Rumi, Omar Khayyam, and Attar. Iranian culture encompasses taarof, Nowruz, Persian cuisine, Persian architecture, Persian gardens, Persian calligraphy, Iranian cinema, and Persian music. Iran was historically known as Persia and is home to one of the world's oldest civilizations.`
+        }</p>
       </section>
     </>
   );

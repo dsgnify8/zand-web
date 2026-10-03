@@ -47,6 +47,22 @@ export async function generateMetadata({
 
 export const revalidate = 60;
 
+
+// Seeded shuffle: same order all day, different order each day
+function dailyShuffle<T>(arr: T[]): T[] {
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  const shuffled = [...arr];
+  let m = shuffled.length;
+  let s = seed;
+  while (m) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const i = s % m--;
+    [shuffled[m], shuffled[i]] = [shuffled[i], shuffled[m]];
+  }
+  return shuffled;
+}
+
 export default async function LocalPage({
   params,
 }: {
@@ -60,7 +76,7 @@ export default async function LocalPage({
     .eq("status", "active")
     .order("name");
 
-  const listings = (businesses || []).map((biz) => {
+  const listings = dailyShuffle(businesses || []).map((biz) => {
     const photoKeys: string[] = Array.isArray(biz.photos) ? biz.photos : [];
     const coverUrl = photoKeys.length > 0 ? businessPhotoUrl(photoKeys[0]) : null;
     return { ...biz, coverUrl };

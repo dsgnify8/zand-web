@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description,
       images: [ogImage],
     },
+    keywords: lang === "fa"
+      ? ["زند", "فارسی", "تاریخ ایران", "کسب‌وکار ایرانی", "فرهنگ ایرانی", "یادگیری فارسی"]
+      : ["Zand", "Iranian", "learn Farsi", "Persian culture", "Iranian history", "Iranian businesses", "Persian Empire", "Iranian diaspora", "Iranian community", "learn Persian", "Farsi app", "Iranian restaurants", "Persian language"],
     alternates: {
       canonical: url,
       languages: { en: url + "/en", fa: url + "/fa" },
@@ -238,6 +241,13 @@ export default async function HomePage({
             {tx.downloadAppStore}
           </a>
         </div>
+      </section>
+      {/* SEO content */}
+      <section className="sr-only" aria-hidden="true">
+        <h2>About Zand</h2>
+        <p>Zand is a platform for the Iranian diaspora to learn Farsi, explore Iranian history and Persian culture, and discover Iranian-owned businesses worldwide. From learning the Persian alphabet to exploring the legacy of Cyrus the Great, the poetry of Hafez and Rumi, and finding Iranian restaurants, shops, and services near you.</p>
+        <h2>درباره زند</h2>
+        <p>زند پلتفرمی برای دیاسپورای ایرانی است. فارسی یاد بگیرید، تاریخ ایران و فرهنگ فارسی را کشف کنید، و کسب‌وکارهای ایرانی را در سراسر جهان پیدا کنید.</p>
       </section>
     </>
   );

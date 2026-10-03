@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://zandapplication.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa"/>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/fa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa"/>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/en/explore</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/explore"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/explore"/>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/fa/explore</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/explore"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/explore"/>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/en/language</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/language"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/language"/>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/fa/language</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/language"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/language"/>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/en/local</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/local"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/local"/>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/fa/local</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/local"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/local"/>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/about"/>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/fa/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zandapplication.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://zandapplication.com/fa/about"/>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/en/privacy</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://zandapplication.com/en/terms</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+</urlset>

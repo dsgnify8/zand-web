@@ -1,11 +1,46 @@
 import type { Metadata } from "next";
 import "./about.css";
 
-export const metadata: Metadata = {
-  title: "About — ZAND",
-  description:
-    "The story behind Zand — how a question about identity became a platform for the Iranian diaspora.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const isFa = lang === "fa";
+
+  const title = isFa ? "درباره زند" : "About Zand | Our Story";
+  const description = isFa
+    ? "داستان زند. چگونه یک سوال درباره هویت ایرانی به پلتفرمی برای دیاسپورای ایرانی تبدیل شد."
+    : "The story behind Zand. How a question about Iranian identity became a platform for the Iranian diaspora to learn, explore, and connect.";
+  const url = `https://zandapplication.com/${lang}/about`;
+
+  return {
+    title,
+    description,
+    keywords: isFa
+      ? ["زند", "درباره زند", "دیاسپورای ایرانی", "هویت ایرانی"]
+      : ["Zand", "Iranian diaspora", "Iranian identity", "Persian culture platform", "Iranian community", "about Zand"],
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Zand",
+      images: [{ url: "https://zandapplication.com/og-default.jpg", width: 1200, height: 630 }],
+      locale: isFa ? "fa_IR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://zandapplication.com/og-default.jpg"],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: "https://zandapplication.com/en/about",
+        fa: "https://zandapplication.com/fa/about",
+      },
+    },
+  };
+}
 
 export default async function AboutPage({
   params,

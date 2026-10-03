@@ -1,3 +1,48 @@
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const isFa = lang === "fa";
+
+  const title = isFa
+    ? "فارسی یاد بگیرید | زند"
+    : "Learn Farsi Online | Zand";
+  const description = isFa
+    ? "فارسی را به روشی یاد بگیرید که واقعا جواب می‌دهد. الفبای فارسی، مکالمه، ترجمه با هوش مصنوعی و تمرین تلفظ."
+    : "Learn Farsi the right way. Master the Persian alphabet, build vocabulary with flip cards, practice conversation with AI translation, and hear native pronunciation. The first Farsi learning app built for how the language actually works.";
+  const url = `https://zandapplication.com/${lang}/language`;
+
+  return {
+    title,
+    description,
+    keywords: isFa
+      ? ["یادگیری فارسی", "آموزش فارسی", "الفبای فارسی", "زبان فارسی"]
+      : ["learn Farsi", "learn Persian", "Farsi app", "Persian language", "Farsi alphabet", "learn Farsi online", "Persian vocabulary", "Farsi for beginners", "speak Farsi", "Persian lessons", "Farsi course", "learn Persian online free"],
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Zand",
+      images: [{ url: "https://zandapplication.com/og-default.jpg", width: 1200, height: 630 }],
+      locale: isFa ? "fa_IR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://zandapplication.com/og-default.jpg"],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: "https://zandapplication.com/en/language",
+        fa: "https://zandapplication.com/fa/language",
+      },
+    },
+  };
+}
+
 import "./language.css";
 import { t } from "@/lib/translations";
 
@@ -118,6 +163,13 @@ export default async function LanguagePage({
         <h2>{tx.langCtaTitle}</h2>
         <p>{tx.langCtaDesc}</p>
         <a href={"/" + lang + "/app"} className="lang-hero-cta">{tx.downloadApp}</a>
+      </section>
+      {/* SEO content */}
+      <section className="sr-only" aria-hidden="true">
+        <h2>Learn Farsi - Persian Language Lessons</h2>
+        <p>Learn Farsi online with Zand. Master the Persian alphabet, build vocabulary, practice pronunciation, and have conversations in Farsi. Whether you are a beginner learning Persian for the first time or reconnecting with your heritage language, Zand teaches Farsi the way it is actually spoken. Learn to read and write in Farsi, understand Persian grammar, and explore the beauty of the Persian language.</p>
+        <h2>یادگیری زبان فارسی</h2>
+        <p>فارسی را با زند یاد بگیرید. الفبای فارسی، واژگان، تلفظ و مکالمه را تمرین کنید.</p>
       </section>
     </>
   );
