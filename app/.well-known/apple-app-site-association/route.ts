@@ -22,7 +22,7 @@
  * (app/+not-found.tsx), so an unrecognised path goes home rather than
  * nowhere, but that floor only exists in the new version.
  */
-const APP_HANDLES_LINKS = false;
+const APP_HANDLES_LINKS = true;
 
 const APP_PATHS = [
   "/add", "/add/*",
