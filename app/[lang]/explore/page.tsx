@@ -276,7 +276,7 @@ export default async function ExplorePage({
       <section className="explore-cta">
         <h2>{tx.exploreCtaTitle}</h2>
         <p>{tx.exploreCtaDesc}</p>
-        <a href={"/" + lang + "/app"} className="explore-cta-btn">{tx.downloadApp}</a>
+        <a href="https://apps.apple.com/za/app/zand-x/id6807573204" target="_blank" rel="noopener noreferrer" className="explore-cta-btn">{tx.downloadApp}</a>
       </section>
       {/* SEO content */}
       <section className="sr-only" aria-hidden="true">

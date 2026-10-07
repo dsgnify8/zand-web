@@ -58,6 +58,18 @@ export async function generateMetadata({
   return {
     title,
     description: desc,
+        keywords: [
+      biz?.name,
+      `Iranian ${biz?.category || "business"}`,
+      `Persian ${biz?.category || "business"}`,
+      `Iranian ${biz?.category || "business"} ${biz?.city || ""}`,
+      `Iranian owned ${biz?.city || ""}`,
+      biz?.city,
+      "Iranian business",
+      "Persian",
+      "Iranian-owned",
+      "Iranian diaspora",
+    ].filter(Boolean) as string[],
     alternates: {
       canonical: url,
       languages: {
@@ -143,6 +155,38 @@ export default async function BusinessPage({
 
   return (
     <>
+      {/* Breadcrumb JSON-LD */}
+      {biz && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Zand",
+                  item: "https://zandapplication.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Iranian Businesses",
+                  item: "https://zandapplication.com/en/local",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: biz.name,
+                  item: `https://zandapplication.com/en/local/${slug}`,
+                },
+              ],
+            }),
+          }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -237,7 +281,7 @@ export default async function BusinessPage({
 
       <div className="biz-app-band">
         <p>See hours, read founder stories, save to your collection, and get directions in the ZAND app.</p>
-        <a href={"/" + lang + "/app"}>{lang === "fa" ? "باز کردن در اپلیکیشن" : "Open in App"}</a>
+        <a href="https://apps.apple.com/za/app/zand-x/id6807573204" target="_blank" rel="noopener noreferrer">{lang === "fa" ? "باز کردن در اپلیکیشن" : "Open in App"}</a>
       </div>
     </>
   );

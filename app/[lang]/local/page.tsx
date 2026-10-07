@@ -113,6 +113,14 @@ export default async function LocalPage({
       </section>
 
       <LocalGrid businesses={listings} lang={lang} />
+
+      {/* SEO content for business directory */}
+      <section className="sr-only" aria-hidden="true">
+        <h2>Iranian Business Directory</h2>
+        <p>Find Iranian-owned businesses worldwide on Zand. Browse Persian restaurants, Iranian cafes, Iranian clothing stores, Persian bakeries, Iranian wineries, and more. From Sofreh in Brooklyn to House of Bijan in Beverly Hills, Berenjak in London to Darioush in Napa Valley. Support Iranian-owned businesses in your city. Iranian restaurants near me. Persian food near me. Iranian businesses in Dubai, London, Los Angeles, New York, Paris, Montreal, San Francisco, and more.</p>
+        <h2>دایرکتوری کسب‌وکارهای ایرانی</h2>
+        <p>کسب‌وکارهای ایرانی را در سراسر جهان در زند پیدا کنید. رستوران‌های ایرانی، کافه‌ها، فروشگاه‌ها و خدمات ایرانی. از سفره در بروکلین تا خانه بیژن در بورلی هیلز، برنجک در لندن تا داریوش در دره ناپا.</p>
+      </section>
     </>
   );
 }

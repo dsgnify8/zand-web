@@ -87,7 +87,7 @@ export default async function LanguagePage({
         <p className="lang-hero-sub">
           {tx.langHeroSub}
         </p>
-        <a href={"/" + lang + "/app"} className="lang-hero-cta">{tx.langHeroCta}</a>
+        <a href="https://apps.apple.com/za/app/zand-x/id6807573204" target="_blank" rel="noopener noreferrer" className="lang-hero-cta">{tx.langHeroCta}</a>
       </section>
 
       {/* Journey */}
@@ -185,7 +185,7 @@ export default async function LanguagePage({
       <section className="lang-cta-band">
         <h2>{tx.langCtaTitle}</h2>
         <p>{tx.langCtaDesc}</p>
-        <a href={"/" + lang + "/app"} className="lang-hero-cta">{tx.downloadApp}</a>
+        <a href="https://apps.apple.com/za/app/zand-x/id6807573204" target="_blank" rel="noopener noreferrer" className="lang-hero-cta">{tx.downloadApp}</a>
       </section>
       {/* SEO content */}
       <section className="sr-only" aria-hidden="true">

@@ -108,7 +108,7 @@ export default async function HomePage({
           {tx.homeDesc}{" "}<em>{tx.homeDescEm}</em>{tx.homeDescEnd}
         </p>
         <div className="home-cta-group">
-          <a href={"/" + lang + "/app"} className="home-cta-primary">
+          <a href="https://apps.apple.com/za/app/zand-x/id6807573204" target="_blank" rel="noopener noreferrer" className="home-cta-primary">
             {tx.downloadApp}
           </a>
           <Link href={"/" + lang + "/about"} className="home-cta-secondary">
@@ -250,7 +250,7 @@ export default async function HomePage({
           </div>
         </div>
 
-        <a href={"/" + lang + "/app"} className="home-section-link home-tpm-readmore">
+        <a href="https://apps.apple.com/za/app/zand-x/id6807573204" target="_blank" rel="noopener noreferrer" className="home-section-link home-tpm-readmore">
           {tx.homeTpmReadMore}
         </a>
       </section>
@@ -262,7 +262,7 @@ export default async function HomePage({
           {tx.homeCtaDesc}
         </p>
         <div className="home-cta-group">
-          <a href={"/" + lang + "/app"} className="home-cta-primary">
+          <a href="https://apps.apple.com/za/app/zand-x/id6807573204" target="_blank" rel="noopener noreferrer" className="home-cta-primary">
             {tx.downloadAppStore}
           </a>
         </div>
