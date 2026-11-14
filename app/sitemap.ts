@@ -18,12 +18,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .select("slug, updated_at")
     .eq("status", "active");
 
+  // Published Hand in Hand profiles (RLS hides drafts from the anon key)
+  const { data: hamdeli } = await supabase
+    .from("hamdeli")
+    .select("slug")
+    .eq("published", true);
+
   // Static pages
   const staticPages = [
     { path: "", priority: 1.0, freq: "weekly" as const },
     { path: "/explore", priority: 0.9, freq: "weekly" as const },
     { path: "/language", priority: 0.9, freq: "monthly" as const },
     { path: "/local", priority: 0.9, freq: "daily" as const },
+    { path: "/hamdeli", priority: 0.8, freq: "weekly" as const },
     { path: "/about", priority: 0.7, freq: "monthly" as const },
   ];
 
@@ -82,6 +89,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]);
 
+  // Hand in Hand profile entries
+  const hamdeliEntries = (hamdeli || []).flatMap((p) =>
+    (["en", "fa"] as const).map((lang) => ({
+      url: `${BASE}/${lang}/hamdeli/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${BASE}/en/hamdeli/${p.slug}`,
+          fa: `${BASE}/fa/hamdeli/${p.slug}`,
+        },
+      },
+    }))
+  );
+
   // Legal pages (no alternates needed)
   const legalEntries = [
     {
@@ -98,5 +121,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  return [...staticEntries, ...bizEntries, ...legalEntries];
+  return [...staticEntries, ...bizEntries, ...hamdeliEntries, ...legalEntries];
 }

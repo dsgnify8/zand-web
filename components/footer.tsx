@@ -5,6 +5,7 @@ const footerLinks = [
   { href: "language", label: { en: "Language", fa: "زبان" } },
   { href: "explore", label: { en: "Explore", fa: "کاوش" } },
   { href: "local", label: { en: "Local", fa: "محلی" } },
+  { href: "hamdeli", label: { en: "Hand in Hand", fa: "همدلی" } },
   { href: "about", label: { en: "About", fa: "درباره" } },
   { href: "privacy", label: { en: "Privacy", fa: "حریم خصوصی" } },
   { href: "terms", label: { en: "Terms", fa: "شرایط" } },

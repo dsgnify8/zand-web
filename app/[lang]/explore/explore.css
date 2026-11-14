@@ -329,6 +329,46 @@
 
 .explore-cta-btn:hover { background: #3D3D3D; }
 
+/* ── Hand in Hand ── */
+.explore-hamdeli {
+  text-align: center; padding: 6rem 3rem 5rem;
+  background: linear-gradient(180deg, #FDF5F3 0%, #EFE3DF 45%, #FDFDFC 100%);
+}
+
+.explore-hamdeli-word {
+  font-family: var(--font-vazirmatn), var(--font-inter), sans-serif;
+  font-size: 2.4rem; line-height: 1.3; color: #B08A46; margin: 0;
+}
+
+.explore-hamdeli h2 {
+  font-family: var(--font-cormorant), Georgia, serif; font-weight: 400;
+  font-size: 2.2rem; color: #2E2823; margin: 0.2rem 0 0;
+}
+
+.explore-hamdeli-rule {
+  display: block; width: 34px; height: 1px; margin: 1.1rem auto;
+  background: #B08A46; opacity: 0.7;
+}
+
+.explore-hamdeli-sub {
+  font-size: 0.95rem; font-weight: 300; color: #8A7F73; line-height: 1.7;
+  max-width: 340px; margin: 0 auto 2rem;
+}
+
+[dir="rtl"] .explore-hamdeli-sub,
+[dir="rtl"] .explore-hamdeli-link {
+  font-family: var(--font-vazirmatn), var(--font-inter), sans-serif;
+}
+
+.explore-hamdeli-link {
+  display: inline-flex; align-items: center; padding: 0.8rem 1.9rem;
+  border-radius: 50px; border: 1px solid #9C5468; color: #9C5468;
+  font-size: 0.88rem; font-weight: 400; text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.explore-hamdeli-link:hover { background: #9C5468; color: #FCF8F7; }
+
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .explore-hero { padding: 7rem 1.5rem 4rem; min-height: auto; }
@@ -346,6 +386,7 @@
   .explore-mockup-row .explore-mockup-slot:nth-child(3) { display: none; }
   .explore-share { padding: 4rem 1.5rem; }
   .explore-cta { padding: 4rem 1.5rem; }
+  .explore-hamdeli { padding: 4.5rem 1.5rem 4rem; }
 }
 
 /* ── History with side mockups ── */

@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
+import Link from "next/link";
 import "./explore.css";
 import { t } from "@/lib/translations";
 
@@ -270,6 +271,21 @@ export default async function ExplorePage({
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── HAND IN HAND ── */}
+      <section className="explore-hamdeli">
+        <p className="explore-hamdeli-word" lang="fa" dir="rtl">همدلی</p>
+        {!isFa && <h2>Hand in Hand</h2>}
+        <span className="explore-hamdeli-rule" aria-hidden />
+        <p className="explore-hamdeli-sub">
+          {isFa
+            ? "آدم‌هایی که کار سخت و بی‌سروصدا می‌کنند، یکی‌یکی انتخاب‌شده."
+            : "People doing quiet, difficult work, chosen one by one."}
+        </p>
+        <Link href={"/" + lang + "/hamdeli"} className="explore-hamdeli-link">
+          {isFa ? "با آن‌ها آشنا شو" : "Meet them"}
+        </Link>
       </section>
 
       {/* CTA */}

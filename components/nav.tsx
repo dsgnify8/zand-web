@@ -9,6 +9,7 @@ const links = [
   { href: "language", label: { en: "Language", fa: "زبان" } },
   { href: "explore", label: { en: "Explore", fa: "کاوش" } },
   { href: "local", label: { en: "Local", fa: "محلی" } },
+  { href: "hamdeli", label: { en: "Hand in Hand", fa: "همدلی" } },
   { href: "about", label: { en: "About", fa: "درباره" } },
 ];
 

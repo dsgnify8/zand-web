@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Vazirmatn } from "next/font/google";
 import { notFound } from "next/navigation";
 import { locales, type Locale, getDirection } from "@/lib/i18n";
 import { Nav } from "@/components/nav";
@@ -19,6 +19,14 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+// Persian type for Hand in Hand. Not preloaded: only pages that use it fetch it.
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic", "latin"],
+  variable: "--font-vazirmatn",
+  display: "swap",
+  preload: false,
+});
+
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
@@ -37,7 +45,7 @@ export default async function LangLayout({
   const dir = getDirection(locale);
 
   return (
-    <html lang={locale} dir={dir} className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang={locale} dir={dir} className={`${inter.variable} ${cormorant.variable} ${vazirmatn.variable}`}>
       <body className="font-sans font-light leading-relaxed">
         <Nav lang={locale} />
         <main>{children}</main>

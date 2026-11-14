@@ -1,0 +1,821 @@
+/* ── Hand in Hand (همدلی) ──
+   Nowruz's warmth with a dusty rose of its own. The page stays the site's
+   paper; the warmth comes from the wash at the top and from the details. */
+
+.hd-page {
+  --hd-rose: #9C5468;
+  --hd-rose-soft: #F5EAEE;
+  --hd-gold: #B08A46;
+  --hd-ink: #2E2823;
+  --hd-dim: #8A7F73;
+  --hd-hair: #E7D9D6;
+  --hd-card: #FCF8F7;
+  --hd-serif: var(--font-cormorant), Georgia, serif;
+  --hd-sans: var(--font-inter), system-ui, sans-serif;
+  --hd-fa: var(--font-vazirmatn), var(--font-inter), system-ui, sans-serif;
+
+  position: relative;
+  color: var(--hd-ink);
+  font-family: var(--hd-sans);
+  padding: 0 16px 5rem;
+  overflow-x: clip;
+}
+
+/* Persian is never letter-spaced: it breaks the joins between letters. */
+.hd-page [lang="fa"],
+.hd-is-fa {
+  letter-spacing: 0 !important;
+}
+
+.hd-is-fa {
+  font-family: var(--hd-fa);
+}
+
+/* ── Signature details ── */
+
+.hd-rule {
+  display: block;
+  width: 34px;
+  height: 1px;
+  background: var(--hd-gold);
+  opacity: 0.7;
+  margin: 0 auto;
+}
+
+.hd-diamond {
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: var(--hd-rose);
+  transform: rotate(45deg);
+  margin: 0 auto;
+}
+
+.hd-diamond-gold {
+  width: 6px;
+  height: 6px;
+  background: var(--hd-gold);
+}
+
+.hd-eyebrow {
+  font-family: var(--hd-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: var(--hd-gold);
+  text-align: center;
+  margin: 1.1rem 0 0;
+}
+
+.hd-is-fa .hd-eyebrow {
+  font-family: var(--hd-fa);
+  font-size: 13px;
+  text-transform: none;
+}
+
+.hd-note {
+  font-family: var(--hd-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--hd-dim);
+  text-align: center;
+  margin: 0.35rem 0 0;
+}
+
+.hd-is-fa .hd-note {
+  font-family: var(--hd-fa);
+  font-style: normal;
+  font-size: 12.5px;
+}
+
+.hd-city {
+  display: block;
+  font-family: var(--hd-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--hd-gold);
+}
+
+.hd-is-fa .hd-city {
+  font-family: var(--hd-fa);
+  font-size: 12px;
+  text-transform: none;
+}
+
+/* Round photo inside a fine gold ring, with a small gap between them. */
+.hd-ring {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--hd-gold);
+  padding: 2.5px;
+  box-sizing: border-box;
+}
+
+.hd-ring img,
+.hd-ring-empty {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.hd-ring-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hd-rose-soft);
+  color: var(--hd-rose);
+  font-family: var(--hd-serif);
+  font-size: 1.4em;
+}
+
+.hd-is-fa .hd-ring-empty { font-family: var(--hd-fa); }
+
+.hd-ring-60 { width: 60px; height: 60px; font-size: 16px; }
+.hd-ring-112 { width: 112px; height: 112px; font-size: 28px; }
+
+/* The Persian word, large and gold. */
+.hd-word {
+  font-family: var(--hd-fa);
+  font-weight: 400;
+  color: var(--hd-gold);
+  font-size: 44px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* ── Header and wash ── */
+
+.hd-head {
+  position: relative;
+  text-align: center;
+  padding: 8rem 0 2.75rem;
+}
+
+.hd-wash {
+  position: absolute;
+  top: 0;
+  left: -16px;
+  right: -16px;
+  height: 380px;
+  background: linear-gradient(180deg, #E7D5CF 0%, #EFE3DF 48%, rgba(239, 227, 223, 0) 100%);
+  pointer-events: none;
+}
+
+.hd-head-inner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hd-title {
+  font-family: var(--hd-serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--hd-ink);
+  margin: 0.1rem 0 1rem;
+}
+
+.hd-word-title { margin-bottom: 0.9rem; }
+
+.hd-sub {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--hd-dim);
+  max-width: 300px;
+  margin: 1rem auto 0;
+}
+
+.hd-is-fa .hd-sub { font-size: 14px; line-height: 1.9; }
+
+/* Share: a quiet circle, top right (top left on /fa). */
+.hd-share {
+  position: absolute;
+  top: -2.75rem;
+  inset-inline-end: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.hd-share-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--hd-hair);
+  background: rgba(252, 248, 247, 0.7);
+  color: var(--hd-rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.hd-share-btn:hover {
+  background: var(--hd-card);
+  border-color: #D9C4BF;
+}
+
+.hd-share-note,
+.hd-pass-note {
+  font-size: 11px;
+  color: var(--hd-dim);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  white-space: nowrap;
+  min-height: 1em;
+}
+
+.hd-share-note.is-on,
+.hd-pass-note.is-on { opacity: 1; }
+
+/* ── Intro and lead ── */
+
+.hd-intro {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.hd-intro p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--hd-ink);
+  text-align: start;
+  margin: 0;
+}
+
+.hd-is-fa .hd-intro p { line-height: 2; }
+
+.hd-lead {
+  text-align: center;
+  margin: 3.25rem auto 3rem;
+}
+
+.hd-lead p {
+  font-family: var(--hd-serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--hd-ink);
+  margin: 1.1rem 0;
+}
+
+.hd-is-fa .hd-lead p {
+  font-family: var(--hd-fa);
+  font-style: normal;
+  font-size: 19px;
+}
+
+/* ── Cards ── */
+
+.hd-cards {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 720px) {
+  .hd-cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
+.hd-card {
+  display: block;
+  background: var(--hd-card);
+  border: 1px solid var(--hd-hair);
+  border-radius: 16px;
+  padding: 24px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  min-width: 0;
+}
+
+.hd-card:hover { border-color: #D9C4BF; background: #FDFAF9; }
+
+.hd-card-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hd-card-names {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hd-card-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
+.hd-card-name {
+  font-family: var(--hd-serif);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.2;
+  color: var(--hd-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.hd-card-other {
+  font-family: var(--hd-fa);
+  font-size: 13px;
+  color: var(--hd-rose);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 0 1 auto;
+  max-width: 48%;
+}
+
+.hd-is-fa .hd-card-name {
+  font-family: var(--hd-fa);
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.hd-is-fa .hd-card-other {
+  font-family: var(--hd-serif);
+  font-size: 15px;
+}
+
+.hd-chev {
+  flex: none;
+  color: var(--hd-gold);
+}
+
+[dir="rtl"] .hd-chev,
+[dir="rtl"] .hd-pass-arrow svg { transform: scaleX(-1); }
+
+.hd-card-blurb {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--hd-dim);
+  margin: 16px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hd-is-fa .hd-card-blurb { font-size: 13px; line-height: 1.95; }
+
+.hd-empty {
+  text-align: center;
+  font-family: var(--hd-serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--hd-dim);
+  margin: 1rem auto 0;
+  max-width: 420px;
+}
+
+.hd-is-fa .hd-empty { font-family: var(--hd-fa); font-style: normal; font-size: 15px; }
+
+/* ── Chapters ── */
+
+.hd-chapter {
+  margin: 4.5rem auto 0;
+}
+
+/* ── From their work: the video wall ── */
+
+.hd-wall-wrap { max-width: 760px; }
+
+.hd-wall {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hd-wall-row {
+  display: flex;
+  gap: 10px;
+}
+
+.hd-wall-row-2 { height: clamp(210px, 52vw, 360px); }
+.hd-wall-row-3 { height: clamp(170px, 40vw, 300px); }
+
+.hd-tile {
+  position: relative;
+  display: block;
+  min-width: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--hd-rose-soft);
+  color: #fff;
+  text-decoration: none;
+}
+
+.hd-tile img,
+.hd-reel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.hd-tile:hover img,
+.hd-reel:hover img { transform: scale(1.025); }
+
+.hd-tile-fade {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(180deg, rgba(20, 16, 14, 0) 0%, rgba(20, 16, 14, 0.62) 100%);
+  pointer-events: none;
+}
+
+.hd-tile-name {
+  position: absolute;
+  inset-inline: 12px;
+  bottom: 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 400;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.hd-tile-name svg { flex: none; }
+
+.hd-tile-name span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Close ── */
+
+.hd-close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 5rem auto 0;
+}
+
+.hd-vline {
+  display: block;
+  width: 1px;
+  height: 36px;
+  background: var(--hd-gold);
+  opacity: 0.7;
+}
+
+.hd-word-close { font-size: 26px; }
+
+.hd-close-line {
+  font-family: var(--hd-serif);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--hd-ink);
+  margin: 0;
+}
+
+.hd-is-fa .hd-close-line { font-family: var(--hd-fa); font-style: normal; font-size: 17px; }
+
+/* ── Get the app ── */
+
+.hd-app {
+  max-width: 900px;
+  margin: 4.5rem auto 0;
+  padding-top: 4.5rem;
+  border-top: 1px solid var(--hd-hair);
+  text-align: center;
+}
+
+.hd-phones {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+}
+
+.hd-app-line {
+  font-family: var(--hd-serif);
+  font-style: italic;
+  font-size: 21px;
+  color: var(--hd-ink);
+  margin: 2rem auto 1.5rem;
+  max-width: 420px;
+}
+
+.hd-is-fa .hd-app-line { font-family: var(--hd-fa); font-style: normal; font-size: 16px; }
+
+/* The site's App Store button. */
+.hd-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #171717;
+  color: #F8F6F2;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hd-store:hover { background: #3D3D3D; }
+
+/* ── Profile page ── */
+
+.hd-head-profile { padding-top: 6.5rem; }
+
+.hd-back {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--hd-dim);
+  text-decoration: none;
+  margin-bottom: 1.75rem;
+  transition: color 0.2s ease;
+}
+
+.hd-back:hover { color: var(--hd-rose); }
+.hd-back-arrow { transform: scaleX(-1); }
+[dir="rtl"] .hd-back-arrow { transform: none; }
+
+.hd-profile .hd-head-inner,
+.hd-body {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hd-profile-name {
+  font-family: var(--hd-serif);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--hd-ink);
+  margin: 1.25rem 0 0;
+}
+
+.hd-is-fa .hd-profile-name { font-family: var(--hd-fa); font-size: 25px; }
+
+.hd-profile-other {
+  font-family: var(--hd-fa);
+  font-size: 15px;
+  color: var(--hd-rose);
+  margin: 0.3rem 0 1.1rem;
+}
+
+.hd-is-fa .hd-profile-other { font-family: var(--hd-serif); font-size: 17px; }
+
+.hd-profile .hd-rule + .hd-city { margin-top: 1rem; }
+.hd-profile .hd-rule { margin-top: 0.4rem; }
+
+.hd-story p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--hd-ink);
+  margin: 0 0 1.1em;
+}
+
+.hd-is-fa .hd-story p { line-height: 2.05; }
+
+.hd-need {
+  margin: 1.5rem 0 0;
+  padding-inline-start: 18px;
+  border-inline-start: 3px solid var(--hd-rose);
+  font-family: var(--hd-serif);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--hd-ink);
+}
+
+.hd-is-fa .hd-need { font-family: var(--hd-fa); font-style: normal; font-size: 16px; line-height: 2; }
+
+.hd-reels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 480px;
+  margin: 1.75rem auto 0;
+}
+
+.hd-reels.is-single {
+  grid-template-columns: 1fr;
+  max-width: 260px;
+}
+
+.hd-reel {
+  position: relative;
+  display: block;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--hd-rose-soft);
+  color: #fff;
+  text-decoration: none;
+}
+
+.hd-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.25s ease;
+}
+
+.hd-reel:hover .hd-play { background: rgba(255, 255, 255, 0.28); }
+
+.hd-reel-label {
+  position: absolute;
+  inset-inline-start: 14px;
+  bottom: 13px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.hd-yt {
+  position: relative;
+  max-width: 640px;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 12px;
+  background: var(--hd-rose-soft);
+}
+
+.hd-yt iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hd-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.hd-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--hd-card);
+  border: 1px solid var(--hd-hair);
+  border-radius: 16px;
+  padding: 14px 18px;
+  color: var(--hd-ink);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.hd-link:hover { border-color: #D9C4BF; background: #FDFAF9; }
+
+.hd-link-icon {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--hd-rose-soft);
+  color: var(--hd-rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hd-link-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hd-link-ext { flex: none; color: var(--hd-gold); }
+
+.hd-donate-note {
+  font-size: 14px;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+/* Pass this on: a full-width rose pill. */
+.hd-pass {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hd-pass-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--hd-rose);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.hd-pass-btn:hover { background: #8A4A5C; }
+
+.hd-pass-arrow {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Phones ── */
+
+@media (max-width: 768px) {
+  .hd-head { padding-top: 7rem; }
+  .hd-share { top: -2.25rem; }
+
+  .hd-phones {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -16px;
+    padding: 1rem 16px 2rem;
+  }
+
+  .hd-phones::-webkit-scrollbar { display: none; }
+
+  .hd-phones .phone-frame {
+    flex: 0 0 58%;
+    max-width: 220px;
+    scroll-snap-align: center;
+  }
+
+  .hd-app { padding-top: 3.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hd-tile img,
+  .hd-reel img { transition: none; }
+}
